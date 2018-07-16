@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-02-08 13:06:04
+title:  "Pinhole photography"
+date:   2016-03-02 10:02:00
 categories: [Creative arts]
 ---
 
