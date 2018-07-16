@@ -440,7 +440,16 @@ li.listing {
   height: 100%;
   object-fit: cover;
 }
+//https://medium.freecodecamp.org/how-to-make-your-html-responsive-by-adding-a-single-line-of-css-2a62de81e431
 
+ul {
+  display: table;
+  width: 100%;
+}
+ul li {
+  box-sizing: border-box;
+  width: 100%;
+}
 
 li.listing:last-of-type{
   border-bottom: none;
