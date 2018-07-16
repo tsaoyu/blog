@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tufte-style Jekyll blog"
+title:  "Shall we teach students Python?"
 date:   2015-02-19 21:46:04
 categories: [Random thoughts]
 ---

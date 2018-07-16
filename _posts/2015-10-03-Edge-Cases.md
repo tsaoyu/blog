@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Edge Cases"
+title:  "My way to reinforcement learning"
 date:   2015-02-17 11:04:01
 categories: [Robotics & AI]
 ---
