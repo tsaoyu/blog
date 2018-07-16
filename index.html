@@ -7,17 +7,15 @@ title: blog
   <h1 class="content-listing-header sans">Yu Cao's blog</h1>
   <div class="container">
   {% for category in site.categories %}
-    <div class="container item">
-      <div>
-        <h3>{{ category[0] | capitalize }}</h3>
-        <ul>
-          {% for post in category[1] %}
-            <li>
-              <a href="{{ post.url }}" class="title_listing">{{ post.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+    <div>
+      <h3>{{ category[0] | capitalize }}</h3>
+      <ul>
+        {% for post in category[1] %}
+          <li>
+            <a href="{{ post.url }}" class="title_listing">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   {% endfor %}
   </div>
