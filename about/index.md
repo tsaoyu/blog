@@ -11,4 +11,4 @@ This goal of the blog is far more limited than the understanding of every kind o
 
 In the rare case you need to contact me, you can reach me via email at `$domain@$domain.com` (replace `$domain` with actual domain). Public GPG key could also be downloaded from [here][1].
 
-[1]{{site.url}}/assets/Yu Cao (9D18D88E) – Public.asc
+[1]:{{site.url}}/assets/Yu Cao (9D18D88E) – Public.asc
