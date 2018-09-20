@@ -4,7 +4,7 @@ title: About
 ---
 
 My blog **博**  (bó) is a collection of articles that have been progressively written for some long-term thoughts.
-The name of the blog is a first character that taken from the Chinese phonetic translation of the `blog` (博客). As a single character, it means 
+The name of the blog is the first character that taken from the Chinese phonetic translation of the `blog` (博客). As a single character, it means 
 (having) comprehensive knowledge.   
 
 This goal of the blog is far more limited than the understanding of every kind of knowledge as its name may indicate. But it serves as the place to host my piece of work on board interests that I would like to share. 
