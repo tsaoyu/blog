@@ -20,8 +20,8 @@ But strictly it wasn't pinhole photography, the important part in taking photo h
 *Here is it!* Seagulls and People, a fresh photo that is taken as if it was 1960s. The camera use the exact same pinhole principle as my Pringles cam, the only difference is the light is recorded by digtal sensor. In the era when everyone talking about the sharpness of the photo, this soft image definitely wasn't on a par with modern lens. But the blurry edge and unsaturated color gives a very special creamy and dreamy taste. I would argue this is a piece of art and more importantly this marks the finish of the assignment I had ten years ago. In the remainder of this articile, I will explain why I decided to use a 3D printed pinhole len, how pinhole photography different from normal photogrphy, and what can you expect if you plan to build one as well.  
 
 ## First attempt
-The first attempt was even simpler than my Pringles camera: 
+The first attempt was even simpler than my Pringles camera.
+
 {% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/first_pinhole.JPG' 'pin-hole'%}
-And the quality was okay-ish. 
 
 {% maincolumn  'assets/img/pinhole_photos/first_pinhole_photo.jpg' 'Seagulls and People, 1960s (pretended)    F > 100, ISO 3200, 1/25 s. '%}
