@@ -102,4 +102,4 @@ Any dirt on your sensor is highly visible in the image due to the low light.
 Use the blower to clean the sensor if you mind those .
 
  
- {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Don\'t wipe your screen, it is dust on the sensor.'%}
+ {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Wiping your screen now? This was dust on the sensor.'%}
