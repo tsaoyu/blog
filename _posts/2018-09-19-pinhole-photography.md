@@ -42,7 +42,7 @@ Chris gives an empirical formula to the pinhole size depending on the focal leng
 
 {% math %}{d = \sqrt{f/C}}.{% endmath %}
 
-In this equation, {% math %}d{% endmath %} is the diameter of pinhole, {% math %}f{% endmath %} is focal length in millimeters and {% math %}C{% endmath %}  is a constant depends on the color.
+In this equation, {% m %}d{% em %} is the diameter of pinhole, {% m %}f{% em %} is focal length in millimeters and {% m %}C{% em %}  is a constant depends on the color.
 {% marginnote 'table-1-id' '*Table*: Color constant given by Chris: [web archive](http://web.archive.org/web/20170320200327/http://pinhole.stanford.edu/pinholemath.htm). Assume a 35 mm film or full frame digital equivalent' %}
 
 <div class="table-wrapper">
@@ -66,9 +66,18 @@ The diameter of the pinhole lens is
 
 {% math %}{d = \sqrt{50 mm/750} = 0.258 mm}.{% endmath %}
 
-It is not easy to use home tool to engineer a hole at such precision. 
-But it is always safe to start from a smaller diameter to a larger diameter.
+It is not easy to use home tools to engineer a hole at such precision. 
+Start from smaller diameter would be safe option.
 
 {% maincolumn  'assets/img/pinhole_photos/first_pinhole_photo.jpg' 'Building   F > 100, ISO 6400, 1/25 s. '%}
 
-The whole picture 
+You don't have to worry if only see a partial image like this.
+As long as the image is well centred, the following procedures could make the lens better.
+First of all, the thickness of the body cap is few millimeters. 
+A cylinder shape of pinhole would block part of the light.
+As it shown in the following figure, a conic shape inlet and outlet could help reduce the length of the pinhole.
+
+{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/eng_1.svg' 'Conic process on pinhole'%}
+
+After some careful engineering on the inlet and outlet, the image is now able to cover the whole sensor.
+The picture will produce the full 
