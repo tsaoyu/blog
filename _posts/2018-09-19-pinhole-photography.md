@@ -69,7 +69,7 @@ The diameter of the pinhole lens is
 It is not easy to use home tools to engineer a hole at such precision. 
 Start from smaller diameter would be safe option.
 
-{% maincolumn  'assets/img/pinhole_photos/first_pinhole_photo.jpg' 'Building   F > 100, ISO 6400, 1/25 s. '%}
+{% maincolumn  'assets/img/pinhole_photos/first_pinhole_result.jpg' 'Building   F > 100, ISO 6400, 1/25 s. '%}
 
 You don't have to worry if only see a partial image like this.
 As long as the image is well centred, the following procedures could make the lens better.
