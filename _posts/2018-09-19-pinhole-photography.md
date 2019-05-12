@@ -96,10 +96,16 @@ The final result is shown as below
 At the time when you taking your first picture, someone may kindly remind you to take out body cup before shot.
 Here are some tips or facts that might useful to create your own pinhole photos.
 When using pinhole lens under day lights, the camera (Sony A7II) suggested a 1/25s shutter speed with ISO 6400. 
-This is still acceptable for hand hold shotting but prepare a tripod if you prefer a lower ISO. 
+This is still acceptable for hand hold shotting but prepare a tripod if you prefer a lower ISO or longer shutter speed. 
 
 Any dirt on your sensor is highly visible in the image due to the low light. 
-Use the blower to clean the sensor if you mind those .
+Use the blower to clean the sensor if you mind those shown in red boxes.
 
- 
- {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Wiping your screen now? This was dust on the sensor.'%}
+{% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Wiping your screen now? This was just dust on the sensor.'%}
+
+Another tip is to use your hand to shield sun light if the diffraction distract the main object in the view. 
+{% marginfigure 'mf-id-3' 'assets/img/pinhole_photos/diffraction.gif' 'Diffraction of the sun'%}
+
+## History of pinhole 
+
+There is an argument between who first discovered the pinhole effect.
