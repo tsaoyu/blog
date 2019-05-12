@@ -88,7 +88,7 @@ We could make a step cut on both side of the body cup.
 This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
 The final result is shown as below 
 
-{% maincolumn  'assets/img/pinhole_photos/final_product.jpeg' 'Inside and outside of the final result.'%}
+{% maincolumn  'assets/img/pinhole_photos/final_product.jpg' 'Inside and outside of the final result.'%}
 
 
 ## Taking a picture
