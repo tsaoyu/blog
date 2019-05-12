@@ -82,13 +82,13 @@ It is great that the pinhole is well centred in the body cap so the image in the
 However, only the centre of the image is visible and the rest part is black.
 This is because the body cup is not an ideally thin film that the thickness does influence the view angle.
 
-{% maincolumn 'mf-id-3' 'assets/img/pinhole_photos/eng_1.svg' 'Section view of the body cap, due to its thickness part of light is blocked.'%}
+{% maincolumn  'assets/img/pinhole_photos/eng_1.svg' 'Section view of the body cap, due to its thickness part of light is blocked.'%}
 
 We could make a step cut on both side of the body cup.
 This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
 The final result is shown as below 
 
-{% maincolumn 'mf-id-4' 'assets/img/pinhole_photos/final_product.jpeg' 'Inside and outside of the final result.'%}
+{% maincolumn  'assets/img/pinhole_photos/final_product.jpeg' 'Inside and outside of the final result.'%}
 
 
 ## Taking a picture
@@ -102,4 +102,4 @@ Any dirt on your sensor is highly visible in the image due to the low light.
 Use the blower to clean the sensor if you mind those .
 
  
- {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Dust shown in red boxes'%}
+ {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Don't wipe your screen, it is dust on the sensor.'%}
