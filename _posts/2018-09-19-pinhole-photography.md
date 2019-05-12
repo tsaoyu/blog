@@ -31,18 +31,20 @@ However, the blurry and unsaturated flavour makes it creamy and even dreamy.
 I guess that is the reason why it is accepted as an alternative photography. 
 
 ## Engineering a pinhole
+{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/first_pinhole.JPG' 'Needle on the body cap for pinhole'%}
+
 You could drill a hole on the body cap to get your first pinhole lens.
 Strictly speaking, pinhole lens is not a common optical lens focuses (or disperses) a light beam by means of refraction. 
 A small hole from few micrometers to a hundred micrometers can act as a lens. 
 The diameter of the pinhole is important to the quality of image.
 
-{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/first_pinhole.JPG' 'Needle on the body cap for pinhole'%}
-
 Chris gives an empirical formula to the pinhole size depending on the focal length and type of color.
 
 {% math %}{d = \sqrt{f/C}}.{% endmath %}
 
-In this equation, {% m %}d{% em %} is the diameter of pinhole, {% m %}f{% em %} is focal length in millimeters and {% m %}C{% em %}  is a constant depends on the color.
+In this equation, {% m %}d{% em %} is the diameter of pinhole, {% m %}f{% em %} is focal length in millimeters and {% m %}C{% em %}  is a constant depends on the color. Because the lens doesn't converge the light ray, as Atelier mentioned, {% sidenote 'two' 'His [lensless photography](http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_outline/) is also an amazing source on pinhole photography. '%} the focal length is the distance between the pinhole to image screen. 
+
+
 {% marginnote 'table-1-id' '*Table*: Color constant given by Chris: [web archive](http://web.archive.org/web/20170320200327/http://pinhole.stanford.edu/pinholemath.htm). Assume a 35 mm film or full frame digital equivalent' %}
 
 <div class="table-wrapper">
@@ -66,10 +68,11 @@ The diameter of the pinhole lens is
 
 {% math %}{d = \sqrt{50 mm/750} = 0.258 mm}.{% endmath %}
 
-It is not easy to use home tools to engineer a hole at such precision.
-Some very geeky ruler does tell you how a 0.25 mm hole should looks like.
+It is not necessary to use home tools to engineer a hole at such precision.
+Since the visible light covers the spectrum from 400 to 700 nm, the diameter between 0.23 - 0.29 mm is acceptable.
+Some very geeky ruler shows you how a 0.25 mm hole should looks like.
 {% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/with_ruler.jpeg' 'Original body cup with Nvidia ruler'%}
-But even you had a ruler like this, you'd better start from a small hole.
+But even you had a ruler like this, you'd better start from a smaller hole.
 Gently knock on the needle eye until it about to penetrate on the other side.
 Flip the body cup and repeatedly knock on the needle eye until you made the first hole.
 To extend the hole, use a larger needle on both side and knock them gently.
@@ -104,8 +107,9 @@ Use the blower to clean the sensor if you mind those shown in red boxes.
 {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Wiping your screen now? This was just dust on the sensor.'%}
 
 Another tip is to use your hand to shield sun light if the diffraction distract the main object in the view. 
-{% marginfigure 'mf-id-3' 'assets/img/pinhole_photos/diffraction.gif' 'Diffraction of the sun'%}
+{% marginfigure 'mf-id-3' 'assets/img/pinhole_photos/diffraction.gif' 'Diffraction due to the sun'%}
 
 ## History of pinhole 
 
 There is an argument between who first discovered the pinhole effect.
+Aristotle 
