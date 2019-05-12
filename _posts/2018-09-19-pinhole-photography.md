@@ -36,28 +36,39 @@ Strictly speaking, pinhole lens is not a common optical lens focuses (or dispers
 A small hole from few micrometers to a hundred micrometers can act as a lens. 
 The diameter of the pinhole is important to the quality of image.
 
-{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/first_pinhole.JPG' 'pin-hole'%}
+{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/first_pinhole.JPG' 'Needle on the body cap for pinhole'%}
 
 Chris gives an empirical formula to the pinhole size depending on the focal length and type of color.
 
 {% math %}{d = \sqrt{f/C}}.{% endmath %}
 
-In this equation, f is focal length in millimeters and C is a constant depends on the color.
-{% marginnote 'table-2-id' '*Table*: Color constant' %}
+In this equation, {% math %}d{% endmath %} is the diameter of pinhole, {% math %}f{% endmath %} is focal length in millimeters and {% math %}C{% endmath %}  is a constant depends on the color.
+{% marginnote 'table-1-id' '*Table*: Color constant given by Chris: [web archive](http://web.archive.org/web/20170320200327/http://pinhole.stanford.edu/pinholemath.htm). Assume a 35 mm film or full frame digital equivalent' %}
+
 <div class="table-wrapper">
 <table class="booktabs">
           <thead>
-            <tr><th colspan="2" class="cmid">Items</th><th class="nocmid"></th></tr>
-            <tr><th>Colors</th><th>Description</th><th>Price ($)</th></tr>
+            <tr><th>Colors</th><th>Wave length</th><th>Color constant C</th></tr>
           </thead>
           <tbody>
             <tr><td>Daylight</td>     <td>560 nm</td><td class="r">750</td></tr>
             <tr><td>Blue</td>         <td>450 nm</td>    <td class="r">934</td></tr>
             <tr><td>Green</td>      <td>550 nm</td> <td class="r">763</td></tr>
             <tr><td>Red</td>      <td>650 nm</td> <td class="r">647</td></tr>
-            <tr><td>Infrared</td><td>750</td>  <td class="r">561</td></tr>
+            <tr><td>Infrared</td><td>750 nm</td>  <td class="r">561</td></tr>
           </tbody>
 </table>
 </div>
 
-Those information is enough for the engineering of pinhole. For example, if the diffraction is optimised  
+Those information is enough for the engineering of pinhole. 
+For example, if we'd like to design a pinhole lens at 50mm focal length and minimise the diffraction for day light. 
+The diameter of the pinhole lens is 
+
+{% math %}{d = \sqrt{50 mm/750} = 0.258 mm}.{% endmath %}
+
+It is not easy to use home tool to engineer a hole at such precision. 
+But it is always safe to start from a smaller diameter to a larger diameter.
+
+{% maincolumn  'assets/img/pinhole_photos/first_pinhole_photo.jpg' 'Building   F > 100, ISO 6400, 1/25 s. '%}
+
+The whole picture 
