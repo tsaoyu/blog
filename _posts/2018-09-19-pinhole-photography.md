@@ -66,18 +66,40 @@ The diameter of the pinhole lens is
 
 {% math %}{d = \sqrt{50 mm/750} = 0.258 mm}.{% endmath %}
 
-It is not easy to use home tools to engineer a hole at such precision. 
-Start from smaller diameter would be safe option.
+It is not easy to use home tools to engineer a hole at such precision.
+Some very geeky ruler does tell you how a 0.25 mm hole should looks like.
+{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/with_ruler.jpeg' 'Original body cup with Nvidia ruler'%}
+But even you had a ruler like this, you'd better start from a small hole.
+Gently knock on the needle eye until it about to penetrate on the other side.
+Flip the body cup and repeatedly knock on the needle eye until you made the first hole.
+To extend the hole, use a larger needle on both side and knock them gently.
+Put the body cup back to the camera every time before you decide to use a larger needle.
+The first few images may looks like this:
 
 {% maincolumn  'assets/img/pinhole_photos/first_pinhole_result.jpg' 'Building   F > 100, ISO 6400, 1/25 s. '%}
 
-You don't have to worry if only see a partial image like this.
-As long as the image is well centred, the following procedures could make the lens better.
-First of all, the thickness of the body cap is few millimeters. 
-A cylinder shape of pinhole would block part of the light.
-As it shown in the following figure, a conic shape inlet and outlet could help reduce the length of the pinhole.
+It is great that the pinhole is well centred in the body cap so the image in the middle of frame.
+However, only the centre of the image is visible and the rest part is black.
+This is because the body cup is not an ideally thin film that the thickness does influence the view angle.
 
-{% marginfigure 'mf-id-1' 'assets/img/pinhole_photos/eng_1.svg' 'Conic process on pinhole'%}
+{% maincolumn 'mf-id-3' 'assets/img/pinhole_photos/eng_1.svg' 'Section view of the body cap, due to its thickness part of light is blocked.'%}
 
-After some careful engineering on the inlet and outlet, the image is now able to cover the whole sensor.
-The picture will produce the full 
+We could make a step cut on both side of the body cup.
+This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
+The final result is shown as below 
+
+{% maincolumn 'mf-id-4' 'assets/img/pinhole_photos/final_product.jpeg' 'Inside and outside of the final result.'%}
+
+
+## Taking a picture
+
+At the time when you taking your first picture, someone may kindly remind you to take out body cup before shot.
+Here are some tips or facts that might useful to create your own pinhole photos.
+When using pinhole lens under day lights, the camera (Sony A7II) suggested a 1/25s shutter speed with ISO 6400. 
+This is still acceptable for hand hold shotting but prepare a tripod if you prefer a lower ISO. 
+
+Any dirt on your sensor is highly visible in the image due to the low light. 
+Use the blower to clean the sensor if you mind those .
+
+ 
+ {% maincolumn  'assets/img/pinhole_photos/Seagull1.jpg' 'Seagull   F > 100, ISO 6400, 1/25 s. Dust shown in red boxes'%}
