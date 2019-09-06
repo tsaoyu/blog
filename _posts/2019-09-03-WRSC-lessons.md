@@ -23,6 +23,6 @@ Competition workshop and hotel of this year's WRSC are at the top of the bar. Ho
 
 According to our post-competition survey, the performance of the online tracking website is under the expectation. When 20 trackers all trying to talk to the server, the tracking webpage becomes not responsive. What makes it worse is the law in China restricts the map provider using WGS-84 datum. Most maps in China are GCJ-02 datum that has an offset to the WGS-84 coordinates reported by the trackers. It is quite frustrating to see the boat sailing on the land. During the competition, we use Google Earth to pick up the waypoints for each challenge and Open Street Map (OSM) to display the boat trace. Google Earth project the satellite image using WGS-84 datum but Google Maps does not. OSM seems to neglected Chinese law and display the map in WGS-84.
 
-{% maincolumn  'assets/img/wrsc2019/wgs_offset.png' 'Map offset on Google map'%}
+{% marginfigure 'mg-fig-1'  'assets/img/wrsc2019/wgs_offset.png' 'Map offset on Google map'%}
 
 There are some discussions in replacing the paid Google maps by the OSM. Now there is one more vote for OSM due to the correct display of WGS-84 coordinates at China. The tracking system issue also reflects the lack of technical improvements during the year. There is no centralised organisation to steer the technical development of the WRSC. How could we maintain a group of professionals to improve the key systems (tracking, scoring and queuing) in a sustainable way?
