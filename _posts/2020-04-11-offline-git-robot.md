@@ -1,34 +1,34 @@
 ---
-layout: post
-title:  "Painless offline Git to your robot"
+layout: full-width
+title:  "Git for offline robots"
 date:   2020-04-11 20:00:00
 categories: [Random thoughts]
 ---
-Have you struggled to find internet connection in the field to update the code to the robot?
-Have you painstakingly secure copy source code from host machine to the robot?
-Have you dream of one click code deployment to your robot with just one click and no more mess on the version control?
-This random thought is for you -- field roboticst -- who deseparetly need to update source code in the wild.
+Have you struggled to find an internet connection in the field to update the code to the robot?
+Have you painstakingly secure copy source code from the host machine to the robot?
+Have you dreamed of one-click code deployment to your robot with just one click and no more mess on the version control?
+This random thought is for you -- field roboticist -- who desperately need to update source code in the wild.
 By using offline Git and custom VS code, you can send/receive code between your host computer and robot straight from your code editor.
 It even allows a team of engineers working on the same code base seamlessly thanks to the git workflow.
 
 I first use the offline Git for the sailing robot project that we often have to debug the code and update it near the sea.
-It was not easy to give internet access to our raspberry pi. Traditional method using `rsync` is dangerous when many team members are working on the same code base. So we came up with the idea of using the Git offline and the script works pretty well during last few years.
-Since then I have dream of some one-click method to push/pull code to the robot. 
-It turns out pretty easy to integrate the script in the VS code UI and I have been using this for my underwater robotics research at University of Edinburgh so many times. So I decided to write a short article to share this with you.
+It was not easy to give internet access to our raspberry pi. Traditional method using `rsync` is dangerous when many team members are working on the same code base. So we came up with the idea of using the Git offline and the script works pretty well during the last few years.
+Since then I have thought of some one-click method to push/pull code to the robot. 
+It turns out pretty easy to integrate the script in the VS code UI and I have been using this for my underwater robotics research at the University of Edinburgh so many times. So I decided to write a short article to share this with you.
 
 
 
 ## Offline Git 
 
-Git is not just GitHub. As a socialised version of Git, GitHub gained a lot attention due to the wide community behind it. 
-But Git does not always requires the internet connection to use. It is compeletely viable to use Git without the internet.
-The core idea of Git is distributed version control that works perfect in this application. 
+Git is not just GitHub. As a socialised version of Git, GitHub gained a lot of attention due to the wide community behind it. 
+But Git does not always require the internet connection to use. It is completely viable to use Git without the internet.
+The core idea of Git is a distributed version control that works perfectly in this application. 
 Instead of submitting code changes to the centralised GitHub, we share them offline through direct connection e.g. WiFi access point.
-This will allow us to send/receive changes on local network. Due to all changes are Git commits, it is error prone to code overwrite and version conflict automatically. 
+This will allow us to send/receive changes on the local network. Due to all changes are Git commits, it is error-prone to code overwrite and version conflict automatically. 
 
 
-The first step is to setup a offline bareclone master on the robot. 
-This can be done using the following script. You can copy the script to your host computer and change the username, host ip, git URL for your own robot.
+The first step is to set up an offline bareclone master on the robot. 
+This can be done using the following script. You can copy the script to your host computer and change the username, host IP, git URL for your robot.
 
 ```bash
 #!/bin/bash
@@ -46,11 +46,12 @@ git remote add bareclone ~/REPO_NAME-bare
 ENDSSH
 ```
 Two folders are created on the robot, one is the main working folder `REPO_NAME` and another is the bare clone `REPO_NAME-bare`.
-Everytime when you push/pull in your working folder all the changes are mirrored to the bare clone folder as well.
-Obviously you don't have to do this mannually when you update your code, the following scripts did the push and pull for you.
+Whenever you push/pull in your working folder all the changes are mirrored to the bare clone folder as well.
+You don't have to do this manually when you update your code, the following scripts did the push and pull for you.
 
 
 Push script simply SSH into your robot, push changes to the bare clone folder and update your working folder.
+
 ```bash
 #!/bin/bash
 
@@ -82,19 +83,19 @@ git pull $$USER@$ROBOT_IP:REPO_NAME-bare master
 
 
 ```
-Those three scripts altogether is what you need to use Git offline. I often run the first script in my bash to setup the repository and save the second one as `push2robot.sh` to reuse it. Similarly, the third script is useful when there are more yourself commiting code to the robot and I call it `pullfromrobot.sh`. 
+Those three scripts altogether are what you need to use Git offline. I often run the first script in my bash to set up the repository and save the second one as `push2robot.sh` to reuse it. Similarly, the third script is useful when there are more yourself committing code to the robot and I call it `pullfromrobot.sh`. 
 
 From now on, you should able to stick with your normal git workflow and push/pull to your robot without internet access.
-The next section describe how to automate the push/pull in the code editor.
+The next section describes how to automate the push/pull in the code editor.
 
 
 
 ## VS Code custom buttom
 
-Most time I use code editor to commit / push code to my repository by few simple clicks. I would also like to do this without leaving my text editor.
+Most time I use the code editor to commit/push code to my repository by a few simple clicks. I would also like to do this without leaving my text editor.
 In VS code, it is pretty simple to custom the action using the action buttons plugin. 
-The plugin in avaliable at https://github.com/SeunLanLege/vscode-action-buttons in VScode extensions store.
-After install the plugin, the action buttons is ready for our custom script.
+The plugin is available at [here](https://github.com/SeunLanLege/vscode-action-buttons) in VScode extensions store.
+After installing the plugin, the action button is ready for our custom script.
 Add the following to your settings under `.vscode/ setting.json`
 
 ```json
@@ -120,23 +121,24 @@ Add the following to your settings under `.vscode/ setting.json`
     }
 ```
 and hit the refresh button the `Send to 🤖` command will appear at the status bar. 
-After commit your changes, you can click this button and the code will be automatically upload to the robot.
-It is good idea to `Pull from 🤖` first if you working as a team.
+After committing your changes, you can click this button and the code will be automatically uploaded to the robot.
+It is a good idea to `Pull from 🤖` first if you working as a team.
 Git will try to merge the changes made by your teammates and keep you updated while offline. Sweet.
 
+{% maincolumn  'assets/img/offline-git/action-button.png 'Send to robot button in action'%}
 
 
 ## Best practise
 
 The pull and push mechanism is very simple. But there are some common gotchas that not as intuitive as `rsync` or `scp` based method.
-First of all you always have to pull before push to your robot if your team mates are working on this repository together.
+First of all, you always have to pull before push to your robot if your teammates are working on this repository together.
 Unless you know what you are doing do not force push your changes to the robot.
-Even it is an offline git, the pricinple of git workflow still applies.
+Even it is an offline git, the principles of git workflow still apply.
 
-This workflow also discourage the direct changes in your robot working directory e.g. `SSH` into the robot and `vi` on the source code.
-You may able to commit them on the robot by using a seperated robot account but it is harder to know who really made those changes.
+This workflow also discourages the direct changes in your robot working directory e.g. `SSH` into the robot and `vi` on the source code.
+You may able to commit them on the robot by using a separated robot account but it is harder to know who made those changes.
 It is also harder to deal with merge on the robot when the file is modified at the same time. 
 
 So the best practise of working with offline Git is to treat it exactly as online Git. Enjoy the full power of Git without thinking about the internet connection in the field. 
 
-Enjoy your hacking and long life robots.
+Enjoy hacking with offline Git.
