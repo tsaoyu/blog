@@ -125,7 +125,7 @@ After committing your changes, you can click this button and the code will be au
 It is a good idea to `Pull from 🤖` first if you working as a team.
 Git will try to merge the changes made by your teammates and keep you updated while offline. Sweet.
 
-{% maincolumn  'assets/img/offline-git/action-button.png 'Send to robot button in action'%}
+{% maincolumn  'assets/img/offline-git/action-button.png' 'Send to robot button in action'%}
 
 
 ## Best practise
