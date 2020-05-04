@@ -170,7 +170,7 @@ In my workflow, there are some use cases I do enjoy using the smart card.
 Git commit can be submitted to the repository by anyone who has write access. The information of committer can be arbitrarily assigned using git
 config. Git signing is a proper way to prove the identity of the committer.
 
-{% marginfigure  'mg-fig-1' 'assets/img/openpgp-card/github_show.png' 'Verifid git commit'%}
+{% marginfigure  'mg-fig-1' 'assets/img/openpgp-card/github_show.png' 'Verified git commit'%}
 
 
 ### Upload your public PGP key to GitHub
