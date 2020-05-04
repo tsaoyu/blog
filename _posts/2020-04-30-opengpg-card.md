@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Physical OpenGPG card"
+title:  "Physical OpenGPG keys"
 date:   2020-04-28 20:00:00
 categories: [Random thoughts]
 ---
