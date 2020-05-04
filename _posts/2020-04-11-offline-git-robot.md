@@ -142,3 +142,4 @@ It is also harder to deal with merge on the robot when the file is modified at t
 So the best practise of working with offline Git is to treat it exactly as online Git. Enjoy the full power of Git without thinking about the internet connection in the field. 
 
 Enjoy hacking with offline Git.
+
