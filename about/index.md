@@ -4,11 +4,10 @@ title: About
 ---
 
 My blog **博**  (bó) is a collection of articles that have been progressively written for some long-term thoughts.
-The name of the blog is the first character that taken from the Chinese phonetic translation of the `blog` (博客). As a single character, it could mean
-(having) a comprehensive knowledge.   
+The name of the blog is the first character that taken from the Chinese phonetic translation of the `blog` (博客). As a single character, it means wide or huge and often linked to process a wide range of knowledge.   
 
-This goal of the blog is far more limited than its name may indicate. But it well serves as the place to host my piece of work from a board specturm of interests. 
+This goal of the blog is to collect ideas on a board specturm of interests. 
 
-In case you need to contact, you may reach me via email at `$domain@$domain.com` (replace `$domain` with the actual one). Public GPG key could be downloaded from [here][1].
+You can reach me via email at `$domain@$domain.com` (replace `$domain` with the actual one). Public GPG key could be downloaded from [here][1].
 
-[1]:{{site.url}}/assets/Yu Cao (9D18D88E) – Public.asc
+[1]:{{site.url}}/assets/Publickey.asc
