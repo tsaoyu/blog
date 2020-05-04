@@ -5,15 +5,32 @@ date:   2020-04-28 20:00:00
 categories: [Random thoughts]
 ---
 
-## 
+## Smart card reader
 
-Recently, I updated my personal computer from 2014 MacBook Pro to the ThinkPad P1 gen2 that gave me a huge boost in productivity.
-Even the body of the laptop is already very slim, it still equipped with a smart card reader to meet the business-standard. 
-In some of the big organisations, the employers are allowed to authenticate themselves using the smart card. 
-The card reader is prepared for such use cases and certainty far away from my daily uses.
+Recently, I updated my personal computer from 2014 MacBook Pro to the ThinkPad P1 gen2.
+Two other competitors are Apple MacBook 16 and Huawei Matebook Pro in the last round.
+Both of them are great product but ThinkPad surpass them in terms of ports -- two USB-A, SD card reader, two USB-C, and full size HDMI.
+You would definitely love the first two kind of ports if your interact with physical robots.
 
-Until one day, I found there is an OpenGPG card that sold on FLOSS shop which could be used to generate and store gpg keys in Linux.
-This makes me very interested in such a card that might help me to improve the security level in my workflow. 
+What surprise me is that Lenovo still managed to fit a full size smart card reader into the slim chassis.
+The smart card are often used in big organisations to let employers authenticate themselves using a physical card e.g log into computer in the enterprise domain.
+
+I am not aware of any personal use case until I come across the OpenGPG card.
+The OpenGPG card  has the same form factor as the credit card but the chip is designed for various cryptographic tasks.
+I purchased mine from the [FLOSS shop](https://www.floss-shop.de/en/) and the lastest version of OpenGPG card has:
+
+- OpenGPG compatibility
+- RSA storage up to 4096 bit
+- Key generation on card
+- Hardware random number generator
+- Works with GunPG
+
+
+
+{% marginfigure 'mf-id-1' 'assets/img/openpgp-card/card.jpg' 'Back of OpenGPG card'%}
+
+The OpenGPG compatibility and the key storage capability are the two features I am fond of. 
+This setup guide may help to to harness those features if you own a card (or OpenGPG compatiable Yubikeys).
 
 
 ## Setup the card
@@ -153,6 +170,9 @@ In my workflow, there are some use cases I do enjoy using the smart card.
 Git commit can be submitted to the repository by anyone who has write access. The information of committer can be arbitrarily assigned using git
 config. Git signing is a proper way to prove the identity of the committer.
 
+{% marginfigure 'assets/img/openpgp-card/github_show.png' 'Window ask for PIN when signing the commit'%}
+
+
 ### Upload your public PGP key to GitHub
 
 Get your public key from GnuPG:
@@ -181,28 +201,29 @@ A window will be prompt to let you insert the physical card and ask you for the 
 
 If everything is configured properly, this commit will have a `verified` status on GitHub.
 
-{% maincolumn 'assets/img/openpgp-card/github_show.png' 'Window ask for PIN when signing the commit'%}
+
 
 
 ## Email encryption
 
 Another use case I would prefer OpenGPG card is the email signature and encryption.
-As I am working on both Windows and Linux for engineering challenges, it is handy to store and share the PGP key on the card.
-There are many options to deal with email encryption under different operating systems.
+Since my computer is dual boot in Linux and Windows, I would have to keep two sets of keys if I don't have a way to share them.
+The smart card address this issue by storing the key on the chip and I don't have to worry about the leak of private keys.
+When it comes to the email clients, there are many options on under different operating systems.
 
-### Thunderbird + Enigmail 
+**Thunderbird + Enigmail** on all major OS
 
 Enigmail add-on provides email signature and encryption support with OpenGPG.
 This is the first choice for me as the solution works on all platforms: Linux, Windows, and macOS.
 
 
-### Outlook + Gpg4win
+**Outlook + Gpg4win** on Windows
 
 Sometimes, you do need Outlook to arrange a few things for you and this when Gpg4win step in.
 If you do enjoy the integration of Microsoft productivity suite, go for this.
 
 
-### Apple mail + GPGTools
+**Apple mail + GPGTools** on macOS
 
 Similarly, there is a native option for macOS users. The only downside is that GPGTools is not free anymore.
 
@@ -213,13 +234,16 @@ I haven't try SSH login by myself because my organisation blocked the 22 port an
 You can refer to this [Gist](https://gist.github.com/artizirk/d09ce3570021b0f65469cb450bee5e29) for more information about SSH login using GnuPG agent.
 
 
-## System PAM
+## Final thought
 
-Can I use the smart card to replace the password whenever I need it? 
-This is the direction need more research but I would prefer fingerprint as system PAM before this.
+The answer to "Would you need a card to protect yourself" will largely depend on your workflow.
+The physical card is an addtionaly layer of protection to your sensitive data and curcial accesses.
+However, the system security cannot be guaranteed by the physical encryption devices itself.
+I would recommend to use the chance to revisit your security process before invest on such devices.
+Also, it worth to consider USB based physical keys such as Yubikey if you don't have smart card reader.
 
 
-## Do I recommend you to purchase 
+
 
 ### References
 
