@@ -2,7 +2,7 @@
 layout: post
 title:  "Offline Git for robots"
 date:   2020-04-11 20:00:00
-categories: [Random thoughts]
+categories: [Robotics & AI]
 ---
 Have you struggled to find an internet connection in the field to update the code to the robot?
 Have you painstakingly secure copy source code from the host machine to the robot?
