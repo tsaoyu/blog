@@ -51,7 +51,7 @@ pcsc_scan -n
 ```
 The result would like below:
 
-```bash
+``` 
 PC/SC device scanner
 V 1.5.2 (c) 2001-2017, Ludovic Rousseau <ludovic.rousseau@free.fr>
 Using reader plug'n play mechanism
@@ -78,7 +78,7 @@ gpg --card-edit
 
 the command will show the information of your OpenGPG card and start the gpg interactive prompt.
 
-```bash
+``` 
 Reader ...........: Alcor Micro AU9560 00 00
 Application ID ...: D2760001240103030005000092990000
 Version ..........: 3.3
@@ -104,7 +104,7 @@ gpg/card>
 The card is capable of generating gpg keys on its chip in admin mode.
 To enter this mode, type `admin` command and then `help` to show available operations.
 
-```bash
+``` 
 gpg/card> admin
 Admin commands are allowed
 
@@ -148,7 +148,7 @@ To view the gpg keys on the card, simply type `list` command and all keys will b
 Finally, we also like to add the smart card to gnome keyring service.
 Edit the `/usr/local/bin/gnome-keyring-daemon` with follwing lines
 
-```bash
+```bash 
 #!/bin/sh
 /usr/bin/gnome-keyring-daemon --start -c pkcs11,secrets
 ```
@@ -176,7 +176,7 @@ config. Git signing is a proper way to prove the identity of the committer.
 ### Upload your public PGP key to GitHub
 
 Get your public key from GnuPG:
-```bash
+``` 
 gpg --armour --export YOUR_EMAIL_ADD
 ```
 and paste that into [https://github.com/settings/keys](https://github.com/settings/keys). 
