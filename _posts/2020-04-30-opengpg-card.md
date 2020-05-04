@@ -51,7 +51,7 @@ pcsc_scan -n
 ```
 The result would like below:
 
-```
+```bash
 PC/SC device scanner
 V 1.5.2 (c) 2001-2017, Ludovic Rousseau <ludovic.rousseau@free.fr>
 Using reader plug'n play mechanism
@@ -78,7 +78,7 @@ gpg --card-edit
 
 the command will show the information of your OpenGPG card and start the gpg interactive prompt.
 
-```
+```bash
 Reader ...........: Alcor Micro AU9560 00 00
 Application ID ...: D2760001240103030005000092990000
 Version ..........: 3.3
@@ -104,7 +104,7 @@ gpg/card>
 The card is capable of generating gpg keys on its chip in admin mode.
 To enter this mode, type `admin` command and then `help` to show available operations.
 
-```
+```bash
 gpg/card> admin
 Admin commands are allowed
 
@@ -148,7 +148,7 @@ To view the gpg keys on the card, simply type `list` command and all keys will b
 Finally, we also like to add the smart card to gnome keyring service.
 Edit the `/usr/local/bin/gnome-keyring-daemon` with follwing lines
 
-```
+```bash
 #!/bin/sh
 /usr/bin/gnome-keyring-daemon --start -c pkcs11,secrets
 ```
@@ -170,13 +170,13 @@ In my workflow, there are some use cases I do enjoy using the smart card.
 Git commit can be submitted to the repository by anyone who has write access. The information of committer can be arbitrarily assigned using git
 config. Git signing is a proper way to prove the identity of the committer.
 
-{% marginfigure 'assets/img/openpgp-card/github_show.png' 'Window ask for PIN when signing the commit'%}
+{% marginfigure 'assets/img/openpgp-card/github_show.png' 'Verifid git commit'%}
 
 
 ### Upload your public PGP key to GitHub
 
 Get your public key from GnuPG:
-```
+```bash
 gpg --armour --export YOUR_EMAIL_ADD
 ```
 and paste that into [https://github.com/settings/keys](https://github.com/settings/keys). 
@@ -239,7 +239,7 @@ You can refer to this [Gist](https://gist.github.com/artizirk/d09ce3570021b0f654
 The answer to "Would you need a card to protect yourself" will largely depend on your workflow.
 The physical card is an addtionaly layer of protection to your sensitive data and curcial accesses.
 However, the system security cannot be guaranteed by the physical encryption devices itself.
-I would recommend to use the chance to revisit your security process before invest on such devices.
+I would recommend to use the chance to revisit your security practise before investing on the device.
 Also, it worth to consider USB based physical keys such as Yubikey if you don't have smart card reader.
 
 
