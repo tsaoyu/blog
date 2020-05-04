@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git for offline robots"
+title:  "Offline Git for robots"
 date:   2020-04-11 20:00:00
 categories: [Random thoughts]
 ---
