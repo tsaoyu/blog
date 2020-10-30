@@ -89,9 +89,9 @@ This is because the body cup is not an ideally thin film that the thickness does
 
 We could make a step cut on both side of the body cup.
 This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
-The final result is shown as below 
+The final pinhole len is somehow looks like this
 
-{% maincolumn  'assets/img/pinhole_photos/final_product.jpg' 'Inside and outside of the final result.'%}
+{% maincolumn  'assets/img/pinhole_photos/final_product.jpg' 'Inside and outside of the final result. You can see the chamfer for a thiner pinhole. '%}
 
 
 ## Taking a picture
@@ -109,7 +109,20 @@ Use the blower to clean the sensor if you mind those shown in red boxes.
 Another tip is to use your hand to shield sun light if the diffraction distract the main object in the view. 
 {% marginfigure 'mf-id-3' 'assets/img/pinhole_photos/diffraction.gif' 'Diffraction due to the sun'%}
 
+Handheld street photography with pinhole is also super fun -- epsecially the low constrast add a bit vintage flavour to your image.
+I do enjoy take some pinhole photos at busy street where everything looks old fashioned.
+
+## Streaming pinhole 
+
+Although not recommended for serious work, you can stream pinhole video from most DSLR or mirrorless camera.
+For Sony cameras on Windows and macOS, please check Image Edge Webcam software provided by the vendor. 
+On Linux systems, gphoto2 and v4l2loopback together could help you to easily create a virutal video devices on most cameras.
+You can stream yourself by selecting the external camera with pinhole lens and enjoy the blurness.
+
 ## History of pinhole 
 
 There is an argument between who first discovered the pinhole effect.
-Aristotle 
+Aristotle in the west and Mo Di (墨子) in the east are commonly known as the first to mention the pinhole effect in their hemisphere.
+Atelier Bonryu presented a comprehensive [review](http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_history/) on the history of the pinhole effect and pinhole photography. 
+I would recommend you to give it a read if you are interested in the origin of the pinhole photography.
+
