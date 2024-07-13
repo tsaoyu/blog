@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博 Bo</title>
+    <description>Yu Cao&#39;s personal Blog</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 13 Jul 2024 01:22:53 -0400</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2024 01:22:53 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Alignment of Large Models</title>
+        <description>&lt;p&gt;Over the past few years, I have worked on various AI projects and have semi-settled in the area of aligning large language models as my career. My daily job involves numerous experiments with generative language models to understand their shortcomings and develop plans to remedy their imperfections.&lt;/p&gt;
+
+&lt;p&gt;My journey began in the summer of 2015 at the NGCM (Next Generation Computational Modelling) summer school in Southampton, nearly ten years ago. There, we were introduced to the basics of IPython notebooks, good conventions in version control and testing, Pandas, and CUDA. My technology stack hasn’t changed much since joining Huawei and Alibaba, which suggests that everyone at that summer school had a good understanding of the transformative impact computation would have on the industry.&lt;/p&gt;
+
+&lt;p&gt;During my PhD, I didn’t focus much on the ‘publish or perish’ game and had virtually no serious publications in core research tracks. Instead, I spent much of my time working with robots and daydreaming about applying useful AI to them. It is now clear that working on maritime robots assumed a significant computational budget and sensor availability. The level of intelligence was limited by our computational resources (a single Raspberry Pi), the team’s budget, and the progress of general pretrained models.&lt;/p&gt;
+
+&lt;p&gt;Two conflicting streams of thought occupied my mind until the emergence of ChatGPT: a) developing quick, effective, but not overly smart solutions for intermediate problems, and b) building an ideal environment for smart ideas that might not work in the short term. The former was more about student robotics teams and competitions, while the latter pertained to my research-oriented PhD thesis in a simulated environment. In retrospect, my PhD thesis was lacking in execution and innovation. It discussed finding suitable configurations in a large design space (solved by a genetic algorithm) and learning policies from data to handle uncertainty (solved by PPO, a reinforcement learning algorithm). There was a significant gap between my work with a small sailing robot and my proposed solution for long-term self-sustained robotic power management.&lt;/p&gt;
+
+&lt;p&gt;It took me several years to explore ideas around this, and the solution clearly revolved around robots and AI. The first attempt came from the robot control problem: how much can we push the limits of robots in the most challenging environments? I might find some insights while building RL-based controllers. The second attempt involved identifying needs wherever AI could make a significant contribution.&lt;/p&gt;
+
+&lt;p&gt;So this post is my long-term thought on what might work in 5 or even 10 years based on my best guess.&lt;/p&gt;
+
+&lt;h2 id=&quot;robotics-to-intelligence&quot;&gt;Robotics to intelligence&lt;/h2&gt;
+
+&lt;h2 id=&quot;chatbot-to-intelligence&quot;&gt;Chatbot to intelligence&lt;/h2&gt;
+
+&lt;h2 id=&quot;converge-or-diverge&quot;&gt;Converge or diverge&lt;/h2&gt;
+
+&lt;h2 id=&quot;what-we-do-it-for&quot;&gt;What we do it for?&lt;/h2&gt;
+
+&lt;h2 id=&quot;rational-through-alignment&quot;&gt;Rational through alignment&lt;/h2&gt;
+
+&lt;h2 id=&quot;scalable-oversight&quot;&gt;Scalable oversight&lt;/h2&gt;
+
+&lt;h2 id=&quot;give-away-control&quot;&gt;Give away control&lt;/h2&gt;
+
+</description>
+        <pubDate>Sat, 13 Jul 2024 07:27:00 -0400</pubDate>
+        <link>/articles/large-models</link>
+        <guid isPermaLink="true">/articles/large-models</guid>
+        
+        
+        <category>robotics &amp; ai</category>
+        
+      </item>
+    
+      <item>
+        <title>Physical OpenGPG keys</title>
+        <description>&lt;h2 id=&quot;smart-card-reader&quot;&gt;Smart card reader&lt;/h2&gt;
+
+&lt;p&gt;Recently, I updated my personal computer from 2014 MacBook Pro to the ThinkPad P1 gen2.
+Two other competitors are Apple MacBook 16 and Huawei Matebook Pro in the last round.
+Both of them are great product but ThinkPad surpass them in terms of ports – two USB-A, SD card reader, two USB-C, and full size HDMI.
+You would definitely love the first two kind of ports if your interact with physical robots.&lt;/p&gt;
+
+&lt;p&gt;What surprise me is that Lenovo still managed to fit a full size smart card reader into the slim chassis.
+The smart card are often used in big organisations to let employers authenticate themselves using a physical card e.g log into computer in the enterprise domain.&lt;/p&gt;
+
+&lt;p&gt;I am not aware of any personal use case until I come across the OpenGPG card.
+The OpenGPG card  has the same form factor as the credit card but the chip is designed for various cryptographic tasks.
+I purchased mine from the &lt;a href=&quot;https://www.floss-shop.de/en/&quot;&gt;FLOSS shop&lt;/a&gt; and the lastest version of OpenGPG card has:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;OpenGPG compatibility&lt;/li&gt;
+  &lt;li&gt;RSA storage up to 4096 bit&lt;/li&gt;
+  &lt;li&gt;Key generation on card&lt;/li&gt;
+  &lt;li&gt;Hardware random number generator&lt;/li&gt;
+  &lt;li&gt;Works with GunPG&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;label for=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/openpgp-card/card.jpg&quot; /&gt;&lt;br /&gt;Back of OpenGPG card&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The OpenGPG compatibility and the key storage capability are the two features I am fond of. 
+This setup guide may help to to harness those features if you own a card (or OpenGPG compatiable Yubikeys).&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-the-card&quot;&gt;Setup the card&lt;/h2&gt;
+
+&lt;p&gt;There are a few packages we need to set up the card on Ubuntu 18.04.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt install pcscd scdaemon gnupg2 pcsc-tools opensc -y
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;gnupg2&lt;/code&gt; is the open-source implementation of OpenGPG standard, we will use it to edit the card information and manage our keys later. The other packages are the driver, daemon and configuration tool for the smart card reader.&lt;/p&gt;
+
+&lt;p&gt;First of all, we would like to scan the computer to find the smart card reader.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+pcsc_scan -n
+&lt;/code&gt;
+The result would like below:&lt;/p&gt;
+
+&lt;p&gt;``` 
+PC/SC device scanner
+V 1.5.2 (c) 2001-2017, Ludovic Rousseau &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#108;&amp;#117;&amp;#100;&amp;#111;&amp;#118;&amp;#105;&amp;#099;&amp;#046;&amp;#114;&amp;#111;&amp;#117;&amp;#115;&amp;#115;&amp;#101;&amp;#097;&amp;#117;&amp;#064;&amp;#102;&amp;#114;&amp;#101;&amp;#101;&amp;#046;&amp;#102;&amp;#114;&quot;&gt;&amp;#108;&amp;#117;&amp;#100;&amp;#111;&amp;#118;&amp;#105;&amp;#099;&amp;#046;&amp;#114;&amp;#111;&amp;#117;&amp;#115;&amp;#115;&amp;#101;&amp;#097;&amp;#117;&amp;#064;&amp;#102;&amp;#114;&amp;#101;&amp;#101;&amp;#046;&amp;#102;&amp;#114;&lt;/a&gt;
+Using reader plug’n play mechanism
+Scanning present readers…
+0: Alcor Micro AU9560 00 00&lt;/p&gt;
+
+&lt;p&gt;Wed Apr  29 18:07:54 2020
+ Reader 0: Alcor Micro AU9560 00 00
+  Card state: Card inserted, 
+  ATR: 3B DA 18 FF 81 B1 FE 75 1F 03 00 31 F5 73 C0 01 60 00 90 00 1C
+```&lt;/p&gt;
+
+&lt;p&gt;The smart card reader is at &lt;code&gt;AU9560 00 00&lt;/code&gt; and I could add it to the daemon&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+echo &quot;reader-port \&quot;Alcor Micro AU9560 00 00\&quot;&quot; &amp;gt; ~/.gnupg/scdaemon.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After the reboot, you would able to initialise the card:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+gpg --card-edit
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;the command will show the information of your OpenGPG card and start the gpg interactive prompt.&lt;/p&gt;
+
+&lt;p&gt;``` 
+Reader ………..: Alcor Micro AU9560 00 00
+Application ID …: D2760001240103030005000092990000
+Version ……….: 3.3
+Manufacturer …..: ZeitControl
+Serial number ….: 00009299
+Name of cardholder: [not set]
+Language prefs …: [not set]
+Sex …………..: unspecified
+URL of public key : [not set]
+Login data …….: [not set]
+Signature PIN ….: forced
+Key attributes …: rsa2048 rsa2048 rsa2048
+Max. PIN lengths .: 64 64 64
+PIN retry counter : 3 0 3
+Signature counter : 0
+Signature key ….: [none]
+Encryption key….: [none]
+Authentication key: [none]
+General key info..: [none]
+gpg/card&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;```
+The card is capable of generating gpg keys on its chip in admin mode.
+To enter this mode, type &lt;code&gt;admin&lt;/code&gt; command and then &lt;code&gt;help&lt;/code&gt; to show available operations.&lt;/p&gt;
+
+&lt;p&gt;``` 
+gpg/card&amp;gt; admin
+Admin commands are allowed&lt;/p&gt;
+
+&lt;p&gt;gpg/card&amp;gt; help
+quit           quit this menu
+admin          show admin commands
+help           show this help
+list           list all available data
+name           change card holder’s name
+url            change URL to retrieve key
+fetch          fetch the key specified in the card URL
+login          change the login name
+lang           change the language preferences
+sex            change card holder’s sex
+cafpr          change a CA fingerprint
+forcesig       toggle the signature force PIN flag
+generate       generate new keys
+passwd         menu to change or unblock the PIN
+verify         verify the PIN and list all data
+unblock        unblock the PIN using a Reset Code
+factory-reset  destroy all keys and data
+```
+we will use the &lt;code&gt;generate&lt;/code&gt; command to generate new keys.&lt;/p&gt;
+
+&lt;p&gt;In the card editing process, you will be asked you to back up the encryption key onto your hard disk.
+It is a good idea to move the back up keys to another device in case your card is damaged or not accessible. 
+During the process, there are few more questions to answer and you need to confirm your ownership of the card by entering the Standard PIN and Admin PIN when necessary.
+The default PINs are&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Standard PIN: 123456
+ADMIN PIN: 12345678
+&lt;/code&gt;
+Of course, those PINs need to change immediately after (use &lt;code&gt;passwd&lt;/code&gt; command in admin mode) you create PGP keys. Also when asked about the PIN, it means the standard PIN instead of Admin PIN.&lt;/p&gt;
+
+&lt;p&gt;After finish the interactive configuration process, the gpg keys are generated and stored on your smart card. 
+Your computer does know the signature of the public key but the private keys are stored on the card. (Remember to remove the backup key to a safe place before proceeding)&lt;/p&gt;
+
+&lt;p&gt;To view the gpg keys on the card, simply type &lt;code&gt;list&lt;/code&gt; command and all keys will be shown.&lt;/p&gt;
+
+&lt;p&gt;Finally, we also like to add the smart card to gnome keyring service.
+Edit the &lt;code&gt;/usr/local/bin/gnome-keyring-daemon&lt;/code&gt; with follwing lines&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bash 
+#!/bin/sh
+/usr/bin/gnome-keyring-daemon --start -c pkcs11,secrets
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;and enable the GunPG agents
+&lt;code&gt;
+echo &quot;use-agent&quot; &amp;gt;&amp;gt; ~/.gnupg/gpg.conf
+echo &quot;enable-ssh-support&quot; &amp;gt;&amp;gt; ~/.gnupg/gpg-agent.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The smart card can now be used as a normal PGP key in your workflow.
+In my workflow, there are some use cases I do enjoy using the smart card.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-signing&quot;&gt;Git signing&lt;/h2&gt;
+
+&lt;p&gt;Git commit can be submitted to the repository by anyone who has write access. The information of committer can be arbitrarily assigned using git
+config. Git signing is a proper way to prove the identity of the committer.&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mg-fig-1&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mg-fig-1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/openpgp-card/github_show.png&quot; /&gt;&lt;br /&gt;Verified git commit&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;upload-your-public-pgp-key-to-github&quot;&gt;Upload your public PGP key to GitHub&lt;/h3&gt;
+
+&lt;p&gt;Get your public key from GnuPG:
+&lt;code&gt;
+gpg --armour --export YOUR_EMAIL_ADD
+&lt;/code&gt;
+and paste that into &lt;a href=&quot;https://github.com/settings/keys&quot;&gt;https://github.com/settings/keys&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;setup-git-gpg-key&quot;&gt;Setup Git GPG key&lt;/h3&gt;
+&lt;p&gt;Git let GnuPG sign the commit and you only have to inform which key to use if you have multiple signing keys. Git might able to find the right key if there is only one key but to be more secure it is better to confirm which key you are having on the card.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+git config --global user.signingkey YOURKEY_SIGNATURE
+&lt;/code&gt;
+where &lt;code&gt;YOURKEY_SIGNATURE&lt;/code&gt; is the general key info for your gpg keys.&lt;/p&gt;
+
+&lt;h3 id=&quot;signing-the-code&quot;&gt;Signing the code&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+git commit -S -m &#39;Change the title of the post&#39;
+&lt;/code&gt;
+this will call GunPG and use the signature key to sign off the commit.
+A window will be prompt to let you insert the physical card and ask you for the standard PIN if the card is already in the reader.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Window ask for PIN when signing the commit&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/openpgp-card/signing_commit.png&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;If everything is configured properly, this commit will have a &lt;code&gt;verified&lt;/code&gt; status on GitHub.&lt;/p&gt;
+
+&lt;h2 id=&quot;email-encryption&quot;&gt;Email encryption&lt;/h2&gt;
+
+&lt;p&gt;Another use case I would prefer OpenGPG card is the email signature and encryption.
+Since my computer is dual boot in Linux and Windows, I would have to keep two sets of keys if I don’t have a way to share them.
+The smart card address this issue by storing the key on the chip and I don’t have to worry about the leak of private keys.
+When it comes to the email clients, there are many options on under different operating systems.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thunderbird + Enigmail&lt;/strong&gt; on all major OS&lt;/p&gt;
+
+&lt;p&gt;Enigmail add-on provides email signature and encryption support with OpenGPG.
+This is the first choice for me as the solution works on all platforms: Linux, Windows, and macOS.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Outlook + Gpg4win&lt;/strong&gt; on Windows&lt;/p&gt;
+
+&lt;p&gt;Sometimes, you do need Outlook to arrange a few things for you and this when Gpg4win step in.
+If you do enjoy the integration of Microsoft productivity suite, go for this.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Apple mail + GPGTools&lt;/strong&gt; on macOS&lt;/p&gt;
+
+&lt;p&gt;Similarly, there is a native option for macOS users. The only downside is that GPGTools is not free anymore.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssh-login&quot;&gt;SSH login&lt;/h2&gt;
+
+&lt;p&gt;I haven’t try SSH login by myself because my organisation blocked the 22 port and I use SSH over HTTPS. 
+You can refer to this &lt;a href=&quot;https://gist.github.com/artizirk/d09ce3570021b0f65469cb450bee5e29&quot;&gt;Gist&lt;/a&gt; for more information about SSH login using GnuPG agent.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thought&quot;&gt;Final thought&lt;/h2&gt;
+
+&lt;p&gt;The answer to “Would you need a card to protect yourself” will largely depend on your workflow.
+The physical card is an addtionaly layer of protection to your sensitive data and curcial accesses.
+However, the system security cannot be guaranteed by the physical encryption devices itself.
+I would recommend to use the chance to revisit your security practise before investing on the device.
+Also, it worth to consider USB based physical keys such as Yubikey if you don’t have smart card reader.&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.programster.org/yubikey-link-with-gpg&quot;&gt;https://blog.programster.org/yubikey-link-with-gpg&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gnupg.org/howtos/card-howto/en/ch03s03.html&quot;&gt;https://gnupg.org/howtos/card-howto/en/ch03s03.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stosb.com/blog/using-openpgp-keys-for-ssh-authentication/&quot;&gt;https://stosb.com/blog/using-openpgp-keys-for-ssh-authentication/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.yubico.com/PGP/&quot;&gt;https://developers.yubico.com/PGP/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 28 Apr 2020 16:00:00 -0400</pubDate>
+        <link>/articles/opengpg-card</link>
+        <guid isPermaLink="true">/articles/opengpg-card</guid>
+        
+        
+        <category>random thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Offline Git for robots</title>
+        <description>&lt;p&gt;Have you struggled to find an internet connection in the field to update the code to the robot?
+Have you painstakingly secure copy source code from the host machine to the robot?
+Have you dreamed of one-click code deployment to your robot with just one click and no more mess on the version control?
+This random thought is for you – field roboticist – who desperately need to update source code in the wild.
+By using offline Git and custom VS code, you can send/receive code between your host computer and robot straight from your code editor.
+It even allows a team of engineers working on the same code base seamlessly thanks to the git workflow.&lt;/p&gt;
+
+&lt;p&gt;I first use the offline Git for the sailing robot project that we often have to debug the code and update it near the sea.
+It was not easy to give internet access to our raspberry pi. Traditional method using &lt;code&gt;rsync&lt;/code&gt; is dangerous when many team members are working on the same code base. So we came up with the idea of using the Git offline and the script works pretty well during the last few years.
+Since then I have thought of some one-click method to push/pull code to the robot. 
+It turns out pretty easy to integrate the script in the VS code UI and I have been using this for my underwater robotics research at the University of Edinburgh so many times. So I decided to write a short article to share this with you.&lt;/p&gt;
+
+&lt;h2 id=&quot;offline-git&quot;&gt;Offline Git&lt;/h2&gt;
+
+&lt;p&gt;Git is not just GitHub. As a socialised version of Git, GitHub gained a lot of attention due to the wide community behind it. 
+But Git does not always require the internet connection to use. It is completely viable to use Git without the internet.
+The core idea of Git is a distributed version control that works perfectly in this application. 
+Instead of submitting code changes to the centralised GitHub, we share them offline through direct connection e.g. WiFi access point.
+This will allow us to send/receive changes on the local network. Due to all changes are Git commits, it is error-prone to code overwrite and version conflict automatically.&lt;/p&gt;
+
+&lt;p&gt;The first step is to set up an offline bareclone master on the robot. 
+This can be done using the following script. You can copy the script to your host computer and change the username, host IP, git URL for your robot.&lt;/p&gt;
+
+&lt;p&gt;```bash
+#!/bin/bash&lt;/p&gt;
+
+&lt;h1 id=&quot;set-up-the-repository-clones-on-a-blank-raspberry-pi&quot;&gt;Set up the repository clones on a blank raspberry pi.&lt;/h1&gt;
+&lt;p&gt;# Prepare the directories expected by push2pi and pullfrompi.
+# This requires an internet connection to clone from Github.
+# Running on host computer&lt;/p&gt;
+
+&lt;p&gt;ssh ${USER:=pi}@${ROBOT_IP:=192.168.2.2} «‘ENDSSH’
+git clone git@github.com:yourusername/REPO_NAME.git REPO_NAME
+git clone –bare REPO_NAME REPO_NAME-bare
+cd REPO_NAME
+git remote add bareclone ~/REPO_NAME-bare
+ENDSSH
+```
+Two folders are created on the robot, one is the main working folder &lt;code&gt;REPO_NAME&lt;/code&gt; and another is the bare clone &lt;code&gt;REPO_NAME-bare&lt;/code&gt;.
+Whenever you push/pull in your working folder all the changes are mirrored to the bare clone folder as well.
+You don’t have to do this manually when you update your code, the following scripts did the push and pull for you.&lt;/p&gt;
+
+&lt;p&gt;Push script simply SSH into your robot, push changes to the bare clone folder and update your working folder.&lt;/p&gt;
+
+&lt;p&gt;```bash
+#!/bin/bash&lt;/p&gt;
+
+&lt;h1 id=&quot;running-on-host-computer&quot;&gt;Running on host computer&lt;/h1&gt;
+
+&lt;p&gt;set -e&lt;/p&gt;
+
+&lt;p&gt;echo “Pushing to the robot at ${ROBOT_IP:=192.168.2.2}…”
+git push ${USER:=pi}@$ROBOT_IP:REPO_NAME-bare&lt;/p&gt;
+
+&lt;p&gt;echo “Pulling from bareclone on the robot…”
+ssh $USER@$ROBOT_IP ‘cd ~/REPO_NAME; git pull bareclone master’
+```&lt;/p&gt;
+
+&lt;p&gt;Pull script, on the contrary, pull changes from the bare clone folder.&lt;/p&gt;
+
+&lt;p&gt;```bash
+#!/bin/bash
+# Running on host computer&lt;/p&gt;
+
+&lt;p&gt;set -e&lt;/p&gt;
+
+&lt;p&gt;echo “On ${ROBOT_IP:=192.168.2.2}, pushing to bareclone…”
+ssh ${USER:=pi}@$ROBOT_IP ‘cd ~/REPO_NAME; git push bareclone master’&lt;/p&gt;
+
+&lt;p&gt;echo “Pulling from the pi…”
+git pull $$USER@$ROBOT_IP:REPO_NAME-bare master&lt;/p&gt;
+
+&lt;p&gt;```
+Those three scripts altogether are what you need to use Git offline. I often run the first script in my bash to set up the repository and save the second one as &lt;code&gt;push2robot.sh&lt;/code&gt; to reuse it. Similarly, the third script is useful when there are more yourself committing code to the robot and I call it &lt;code&gt;pullfromrobot.sh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;From now on, you should able to stick with your normal git workflow and push/pull to your robot without internet access.
+The next section describes how to automate the push/pull in the code editor.&lt;/p&gt;
+
+&lt;h2 id=&quot;vs-code-custom-buttom&quot;&gt;VS Code custom buttom&lt;/h2&gt;
+
+&lt;p&gt;Most time I use the code editor to commit/push code to my repository by a few simple clicks. I would also like to do this without leaving my text editor.
+In VS code, it is pretty simple to custom the action using the action buttons plugin. 
+The plugin is available at &lt;a href=&quot;https://github.com/SeunLanLege/vscode-action-buttons&quot;&gt;here&lt;/a&gt; in VScode extensions store.
+After installing the plugin, the action button is ready for our custom script.
+Add the following to your settings under &lt;code&gt;.vscode/ setting.json&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```json
+“actionButtons”: {
+        “defaultColor”: “#FFFFFF”, // Can also use string color names.
+        “loadNpmCommands”:false, // Disables automatic generation of actions for npm commands.
+        “reloadButton”:”♻️”, // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+        “commands”: [
+            {
+                “cwd”: “/home/nelson/ORCA_control/utilities”,     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                “name”: “Send to 🤖”,
+                “singleInstance”: true,
+                “command”: “./push2robot.bash”, // This is executed in the terminal.
+            }
+            {
+                “cwd”: “/home/nelson/ORCA_control/utilities”,     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                “name”: “Pull from 🤖”,
+                “singleInstance”: true,
+                “command”: “./pullfromrobot.bash”, // This is executed in the terminal.
+            }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ]
+} ``` and hit the refresh button the `Send to 🤖` command will appear at the status bar.  After committing your changes, you can click this button and the code will be automatically uploaded to the robot. It is a good idea to `Pull from 🤖` first if you working as a team. Git will try to merge the changes made by your teammates and keep you updated while offline. Sweet.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;figure class=&quot;fullwidth&quot;&gt;&lt;img src=&quot;/assets/img/offline-git/action-button.png&quot; /&gt;&lt;figcaption&gt;Send to robot button in action&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;best-practise&quot;&gt;Best practise&lt;/h2&gt;
+
+&lt;p&gt;The pull and push mechanism is very simple. But there are some common gotchas that not as intuitive as &lt;code&gt;rsync&lt;/code&gt; or &lt;code&gt;scp&lt;/code&gt; based method.
+First of all, you always have to pull before push to your robot if your teammates are working on this repository together.
+Unless you know what you are doing do not force push your changes to the robot.
+Even it is an offline git, the principles of git workflow still apply.&lt;/p&gt;
+
+&lt;p&gt;This workflow also discourages the direct changes in your robot working directory e.g. &lt;code&gt;SSH&lt;/code&gt; into the robot and &lt;code&gt;vi&lt;/code&gt; on the source code.
+You may able to commit them on the robot by using a separated robot account but it is harder to know who made those changes.
+It is also harder to deal with merge on the robot when the file is modified at the same time.&lt;/p&gt;
+
+&lt;p&gt;So the best practise of working with offline Git is to treat it exactly as online Git. Enjoy the full power of Git without thinking about the internet connection in the field.&lt;/p&gt;
+
+&lt;p&gt;Enjoy hacking with offline Git.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 11 Apr 2020 16:00:00 -0400</pubDate>
+        <link>/articles/offline-git-robot</link>
+        <guid isPermaLink="true">/articles/offline-git-robot</guid>
+        
+        
+        <category>robotics &amp; ai</category>
+        
+      </item>
+    
+      <item>
+        <title>Lessons learnt from WRSC 2019</title>
+        <description>&lt;p&gt;World Robotics Sailing Championship (WRSC) 2019 is the 12th edition in its history and it is my fourth attendance to this event. Previously, I was competing from 2016 to 2018 with Team Southampton, a student team devoted to developing an open-source sailing robot. The team goes really well during the last couple of years and we decided to host the competition at Southampton in 2018. The experience gained from both technical and orgnisational aspects motivated me to bring this competition to China. With the help of partners at Zhejiang University and support from the city of Ningbo, we managed to host the biggest event in WRSC history. Whilst celebrating the achievement with 24 teams &lt;label for=&quot;sn1&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;22 out of 24 attempted at least once in this year competition, for the full result see: https://github.com/WRSC/coordinates2019 &lt;/span&gt; who managed to take part in the competition, there are some valuable lessons I learned from WRSC 2019.&lt;/p&gt;
+
+&lt;p&gt;Let’s start from the positive side of the story. This year’s event attracts more than 20 teams to compete and many of them are first time player. The total effort behind this number is enormous and largely attributed to Prof. Chao Xu’s commitment to this event. He changed his IM account to &lt;a href=&quot;http://roboticssailing.org&quot;&gt;roboticsailing.org&lt;/a&gt; and worked as custom service 24/7 to encourage teams to participate in this year’s competition. On the technical side, the Team Southampton open-source code and the standard ready-to-sail kit has lower the entry barrier for many teams. I have been invited to give a talk on the basic concepts in sailing and the use of Southampton code in last Christmas. This talk catalyst local teams to start using open source sailing robot code. Teams can focus on the development of their racing strategy instead of painstakingly converting RC boats into an autonomous one.&lt;br /&gt;
+Another reason for the teams to quickly try robotics sailing is that the standard ready-to-sail kit have been developed for this year’s competition.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Ready-to-sail kit boat, basic dimensions: 1.4 metres long, main and jib controlled by a single servo&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/wrsc2019/RTS_kit.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Differential GPS trackers have been used in our tracking system, increase the localisation accuracy from ~10 m to 1~5 cm level. This technology relies on the land-based GPS offset correction network service — Qian Xun. &lt;label for=&quot;sn2&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;sn2&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;https://www.qxwz.com/en/solution &lt;/span&gt; With a good GPS and 4G network, those trackers are able to transmit high precision location data to the server and save the GPS coordinates locally. It is possible to record the position of the boat and buoy at higher accuracy during the challenges. However, those trackers are not that reliable with the its initial firmware. On board memory is limited so 
+our tracking system team had to limit the single-use time to one hour as a compromise to data log reliability.
+Lizi Wang and his tracking team have spent a lot of time to ask teams to submit their own tracking data when official data is missing. The land-based correction service is only available at China and several Asian countries.  There is a huge room to improve the DGPS tracker for next year’s competition.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Color convention in WRSC 2019 competition&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/wrsc2019/colour.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Lizi and I followed a color convention for this year’s WRSC race committee, this helps a lot to offload common tasks from both of us, allowing at least one of us to freely monitor the progress of the competition. There are four main colors to show the role of volunteers, red is chief referee, yellow is pontoon officer, and green is tracker officers. The rule is as simple as traffic lights. When there is anything emergent that stops you from competing, the team shall speak to one of two chief referees who wear red. Otherwise, the team shall register their attempt in each challenge to tracker officers in green. They will wait to the called by the pontoon officer and allowed to start their race. The yellow and green team use walky-talky to inform each other there is a team coming for the attempt and online spreadsheet was used to log the start and stop time of each attempt. I would recommend whoever is interested in host next year’s competition to use this color convention, otherwise, you will find yourself dealing with every single task because you are the only one that competing team is familiar with.&lt;/p&gt;
+
+&lt;p&gt;The permissive culture of the WRSC is still well maintained. Teams are allowed to make multiple attempts and use the best as their result. We saw teams sharing hardware, exchanging ideas and even soldering electronics for each other. Knowledge sharing on software is not as common as hardware, partly due to the key competitive advantage is the race strategy coded there. Open-source software is widely used but the contribution from the teams is very limited. Language barrier and culture difference might be a reason why teams do not keen to share their improvements.&lt;/p&gt;
+
+&lt;p&gt;Logistic is always a headache to WRSC and the long haul flight to China pose a huge challenge to European teams. Two out of three U.K. teams lost their boat during the transit and the boat arrived a day after the competition start. The risk of boat transportation during international travel limit the WRSC in many ways. First of all, teams tend to carrier smaller boat that can be taken on the airplane. Boats are getting smaller and smaller in recent years and the sailboat class disappeared in this year’s competition. Secondly,  part of the competition is about reliable logistics for international teams. The competition actually starts from the time when the boat is dropped at the airport. It is reasonable to suggest the team to arrive at least a day before the competition if there travel has a transit in between.&lt;/p&gt;
+
+&lt;p&gt;Competition workshop and hotel of this year’s WRSC are at the top of the bar. However, the competition area is too small and not windy enough. The lake itself is located in the city so the wind is shielded by the nearby trees and buildings. It would be much better if the competition is hosted in  a larger open area.&lt;/p&gt;
+
+&lt;p&gt;According to our post-competition survey, the performance of the online tracking website is under the expectation. When 20 trackers all trying to talk to the server, the tracking webpage becomes not responsive. What makes it worse is the law in China restricts the map provider using WGS-84 datum. Most maps in China are GCJ-02 datum, it has an offset to the WGS-84 coordinates which is usually reported by the GPS trackers. It is quite frustrating to see the boat sailing on the land. During the competition, we use Google Earth to pick up the waypoints for each challenge and Open Street Map (OSM) to display the boat trace. Google Earth project the satellite image using WGS-84 datum but Google Maps does not. OSM seems to neglected Chinese law and display the map in WGS-84.&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;mg-fig-1&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mg-fig-1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/wrsc2019/wgs_offset.png&quot; /&gt;&lt;br /&gt;Map offset on Google map, boat should be in the water&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;There are some discussions in replacing the paid Google maps by the OSM. Now there is one more vote for OSM due to the correct display of WGS-84 coordinates at China. The tracking system issue also reflects the lack of technical improvements during the year. There is no centralised organisation to steer the technical development of the WRSC. How could we maintain a group of professionals to improve the key systems (tracking, scoring and queuing) in a sustainable way?&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Sep 2019 07:04:01 -0400</pubDate>
+        <link>/articles/WRSC-lessons</link>
+        <guid isPermaLink="true">/articles/WRSC-lessons</guid>
+        
+        
+        <category>robotics &amp; ai</category>
+        
+      </item>
+    
+      <item>
+        <title>Pinhole photography</title>
+        <description>&lt;h2 id=&quot;first-assignment&quot;&gt;First assignment&lt;/h2&gt;
+&lt;p&gt;The first time I knew pinhole photography was back in junior high school. 
+It was an assignment from the Physics class, we were asked to build a camera using the pinhole effect.
+The design was simple Pringles cam with a tiny hole on the metal end.
+The other side was covered by a piece of semi-transparent paper. 
+As light went through the pinhole and projected on the paper, producing an up-side-down image.
+The blurry image of I first saw have being in my head since then.&lt;/p&gt;
+
+&lt;h2 id=&quot;years-after&quot;&gt;10 years after&lt;/h2&gt;
+&lt;p&gt;The way we take photos changed so rapidly during the last ten years. The Kodak Express film development shop, feels like in a night, all disappeared from the high street.
+The compact digital camera rise and fall. Smartphones now taking the first place as the most popular &lt;label for=&quot;one&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;one&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;Observation based on &lt;a href=&quot;https://www.flickr.com/cameras/&quot;&gt;Most Popular Cameras&lt;/a&gt; in flickr user community &lt;/span&gt; photography devices. Even before I saved enough money for a entry level DSLR, the mirrorless camera already change the way we understand professional photography.&lt;/p&gt;
+
+&lt;p&gt;It would be interesting to take photos using the pinhole plus latest technology so I could digitalise those images as much as possible.&lt;br /&gt;
+And here is how it looks like:&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Seagulls and People, 1960s (pretended)    F &amp;gt; 100, ISO 3200, 1/25 s. &lt;/figcaption&gt;&lt;img src=&quot;/assets/img/pinhole_photos/Seagull.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Here is it!&lt;/em&gt; Seagulls and People, a pretend-to-be 1960s photo taken a mirrorless camera. The camera use the exact same pinhole principle as my Pringles cam. 
+The only difference is the now has a digital back so I could share the image with you.
+Judging by the standard of modern photography, it was horrible.
+The sharpness definitely wasn’t on a par with images produced by modern lens. 
+However, the blurry and unsaturated flavour makes it creamy and even dreamy. 
+I guess that is the reason why it is accepted as an alternative photography.&lt;/p&gt;
+
+&lt;h2 id=&quot;engineering-a-pinhole&quot;&gt;Engineering a pinhole&lt;/h2&gt;
+&lt;p&gt;&lt;label for=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/pinhole_photos/first_pinhole.JPG&quot; /&gt;&lt;br /&gt;Needle on the body cap for pinhole&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;You could drill a hole on the body cap to get your first pinhole lens.
+Strictly speaking, pinhole lens is not a common optical lens focuses (or disperses) a light beam by means of refraction. 
+A small hole from few micrometers to a hundred micrometers can act as a lens. 
+The diameter of the pinhole is important to the quality of image.&lt;/p&gt;
+
+&lt;p&gt;Chris gives an empirical formula to the pinhole size depending on the focal length and type of color.&lt;/p&gt;
+
+&lt;div class=&quot;mathblock&quot;&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;{d = \sqrt{f/C}}.&lt;/script&gt;&lt;/div&gt;
+
+&lt;p&gt;In this equation, &lt;span&gt;​&lt;script type=&quot;math/tex&quot;&gt;d&lt;/script&gt;&lt;/span&gt; is the diameter of pinhole, &lt;span&gt;​&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;&lt;/span&gt; is focal length in millimeters and &lt;span&gt;​&lt;script type=&quot;math/tex&quot;&gt;C&lt;/script&gt;&lt;/span&gt;  is a constant depends on the color. Because the lens doesn’t converge the light ray, as Atelier mentioned, &lt;label for=&quot;two&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;two&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;His &lt;a href=&quot;http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_outline/&quot;&gt;lensless photography&lt;/a&gt; is also an amazing source on pinhole photography.  &lt;/span&gt; the focal length is the distance between the pinhole to image screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;label for=&quot;table-1-id&quot; class=&quot;margin-toggle&quot;&gt; ⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;table-1-id&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;em&gt;Table&lt;/em&gt;: Color constant given by Chris: &lt;a href=&quot;http://web.archive.org/web/20170320200327/http://pinhole.stanford.edu/pinholemath.htm&quot;&gt;web archive&lt;/a&gt;. Assume a 35 mm film or full frame digital equivalent &lt;/span&gt;&lt;/p&gt;
+
+&lt;div class=&quot;table-wrapper&quot;&gt;
+&lt;table class=&quot;booktabs&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Colors&lt;/th&gt;&lt;th&gt;Wave length&lt;/th&gt;&lt;th&gt;Color constant C&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;&lt;td&gt;Daylight&lt;/td&gt;     &lt;td&gt;560 nm&lt;/td&gt;&lt;td class=&quot;r&quot;&gt;750&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Blue&lt;/td&gt;         &lt;td&gt;450 nm&lt;/td&gt;    &lt;td class=&quot;r&quot;&gt;934&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Green&lt;/td&gt;      &lt;td&gt;550 nm&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;763&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Red&lt;/td&gt;      &lt;td&gt;650 nm&lt;/td&gt; &lt;td class=&quot;r&quot;&gt;647&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Infrared&lt;/td&gt;&lt;td&gt;750 nm&lt;/td&gt;  &lt;td class=&quot;r&quot;&gt;561&lt;/td&gt;&lt;/tr&gt;
+          &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Those information is enough for the engineering of pinhole. 
+For example, if we’d like to design a pinhole lens at 50mm focal length and minimise the diffraction for day light. 
+The diameter of the pinhole lens is&lt;/p&gt;
+
+&lt;div class=&quot;mathblock&quot;&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;{d = \sqrt{50 mm/750} = 0.258 mm}.&lt;/script&gt;&lt;/div&gt;
+
+&lt;p&gt;It is not necessary to use home tools to engineer a hole at such precision.
+Since the visible light covers the spectrum from 400 to 700 nm, the diameter between 0.23 - 0.29 mm is acceptable.
+Some very geeky ruler shows you how a 0.25 mm hole should looks like.
+&lt;label for=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-1&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/pinhole_photos/with_ruler.jpeg&quot; /&gt;&lt;br /&gt;Original body cup with Nvidia ruler&lt;/span&gt;
+But even you had a ruler like this, you’d better start from a smaller hole.
+Gently knock on the needle eye until it about to penetrate on the other side.
+Flip the body cup and repeatedly knock on the needle eye until you made the first hole.
+To extend the hole, use a larger needle on both side and knock them gently.
+Put the body cup back to the camera every time before you decide to use a larger needle.
+The first few images may looks like this:&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Building   F &amp;gt; 100, ISO 6400, 1/25 s. &lt;/figcaption&gt;&lt;img src=&quot;/assets/img/pinhole_photos/first_pinhole_result.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;It is great that the pinhole is well centred in the body cap so the image in the middle of frame.
+However, only the centre of the image is visible and the rest part is black.
+This is because the body cup is not an ideally thin film that the thickness does influence the view angle.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Section view of the body cap, due to its thickness part of light is blocked.&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/pinhole_photos/eng_1.svg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;We could make a step cut on both side of the body cup.
+This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
+The final pinhole len is somehow looks like this&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Inside and outside of the final result. You can see the chamfer for a thiner pinhole. &lt;/figcaption&gt;&lt;img src=&quot;/assets/img/pinhole_photos/final_product.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;taking-a-picture&quot;&gt;Taking a picture&lt;/h2&gt;
+
+&lt;p&gt;At the time when you taking your first picture, someone may kindly remind you to take out body cup before shot.
+Here are some tips or facts that might useful to create your own pinhole photos.
+When using pinhole lens under day lights, the camera (Sony A7II) suggested a 1/25s shutter speed with ISO 6400. 
+This is still acceptable for hand hold shotting but prepare a tripod if you prefer a lower ISO or longer shutter speed.&lt;/p&gt;
+
+&lt;p&gt;Any dirt on your sensor is highly visible in the image due to the low light. 
+Use the blower to clean the sensor if you mind those shown in red boxes.&lt;/p&gt;
+
+&lt;figure&gt;&lt;figcaption&gt;Seagull   F &amp;gt; 100, ISO 6400, 1/25 s. Wiping your screen now? This was just dust on the sensor.&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/pinhole_photos/Seagull1.jpg&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Another tip is to use your hand to shield sun light if the diffraction distract the main object in the view. 
+&lt;label for=&quot;mf-id-3&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;mf-id-3&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;/assets/img/pinhole_photos/diffraction.gif&quot; /&gt;&lt;br /&gt;Diffraction due to the sun&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Handheld street photography with pinhole is also super fun – epsecially the low constrast add a bit vintage flavour to your image.
+I do enjoy take some pinhole photos at busy street where everything looks old fashioned.&lt;/p&gt;
+
+&lt;h2 id=&quot;streaming-pinhole&quot;&gt;Streaming pinhole&lt;/h2&gt;
+
+&lt;p&gt;Although not recommended for serious work, you can stream pinhole video from most DSLR or mirrorless camera.
+For Sony cameras on Windows and macOS, please check Image Edge Webcam software provided by the vendor. 
+On Linux systems, gphoto2 and v4l2loopback together could help you to easily create a virutal video devices on most cameras.
+You can stream yourself by selecting the external camera with pinhole lens and enjoy the blurness.&lt;/p&gt;
+
+&lt;h2 id=&quot;history-of-pinhole&quot;&gt;History of pinhole&lt;/h2&gt;
+
+&lt;p&gt;There is an argument between who first discovered the pinhole effect.
+Aristotle in the west and Mo Di (墨子) in the east are commonly known as the first to mention the pinhole effect in their hemisphere.
+Atelier Bonryu presented a comprehensive &lt;a href=&quot;http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_history/&quot;&gt;review&lt;/a&gt; on the history of the pinhole effect and pinhole photography. 
+I would recommend you to give it a read if you are interested in the origin of the pinhole photography.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 01 Aug 2018 06:00:00 -0400</pubDate>
+        <link>/articles/pinhole-photography</link>
+        <guid isPermaLink="true">/articles/pinhole-photography</guid>
+        
+        
+        <category>creative arts</category>
+        
+      </item>
+    
+  </channel>
+</rss>

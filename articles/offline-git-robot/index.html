@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Offline Git for robots</title>
+  <meta name="description" content="Have you struggled to find an internet connection in the field to update the code to the robot?Have you painstakingly secure copy source code from the host m...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/offline-git-robot">
+
+  <link rel="alternate" type="application/rss+xml" title="博 Bo" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/bo.gif" alt="博"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/index.html">blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/index.html">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Offline Git for robots</h1>
+<p class="subtitle">April 11, 2020</p>
+
+<p>Have you struggled to find an internet connection in the field to update the code to the robot?
+Have you painstakingly secure copy source code from the host machine to the robot?
+Have you dreamed of one-click code deployment to your robot with just one click and no more mess on the version control?
+This random thought is for you – field roboticist – who desperately need to update source code in the wild.
+By using offline Git and custom VS code, you can send/receive code between your host computer and robot straight from your code editor.
+It even allows a team of engineers working on the same code base seamlessly thanks to the git workflow.</p>
+
+<p>I first use the offline Git for the sailing robot project that we often have to debug the code and update it near the sea.
+It was not easy to give internet access to our raspberry pi. Traditional method using <code>rsync</code> is dangerous when many team members are working on the same code base. So we came up with the idea of using the Git offline and the script works pretty well during the last few years.
+Since then I have thought of some one-click method to push/pull code to the robot. 
+It turns out pretty easy to integrate the script in the VS code UI and I have been using this for my underwater robotics research at the University of Edinburgh so many times. So I decided to write a short article to share this with you.</p>
+
+<h2 id="offline-git">Offline Git</h2>
+
+<p>Git is not just GitHub. As a socialised version of Git, GitHub gained a lot of attention due to the wide community behind it. 
+But Git does not always require the internet connection to use. It is completely viable to use Git without the internet.
+The core idea of Git is a distributed version control that works perfectly in this application. 
+Instead of submitting code changes to the centralised GitHub, we share them offline through direct connection e.g. WiFi access point.
+This will allow us to send/receive changes on the local network. Due to all changes are Git commits, it is error-prone to code overwrite and version conflict automatically.</p>
+
+<p>The first step is to set up an offline bareclone master on the robot. 
+This can be done using the following script. You can copy the script to your host computer and change the username, host IP, git URL for your robot.</p>
+
+<p>```bash
+#!/bin/bash</p>
+
+<h1 id="set-up-the-repository-clones-on-a-blank-raspberry-pi">Set up the repository clones on a blank raspberry pi.</h1>
+<p># Prepare the directories expected by push2pi and pullfrompi.
+# This requires an internet connection to clone from Github.
+# Running on host computer</p>
+
+<p>ssh ${USER:=pi}@${ROBOT_IP:=192.168.2.2} «‘ENDSSH’
+git clone git@github.com:yourusername/REPO_NAME.git REPO_NAME
+git clone –bare REPO_NAME REPO_NAME-bare
+cd REPO_NAME
+git remote add bareclone ~/REPO_NAME-bare
+ENDSSH
+```
+Two folders are created on the robot, one is the main working folder <code>REPO_NAME</code> and another is the bare clone <code>REPO_NAME-bare</code>.
+Whenever you push/pull in your working folder all the changes are mirrored to the bare clone folder as well.
+You don’t have to do this manually when you update your code, the following scripts did the push and pull for you.</p>
+
+<p>Push script simply SSH into your robot, push changes to the bare clone folder and update your working folder.</p>
+
+<p>```bash
+#!/bin/bash</p>
+
+<h1 id="running-on-host-computer">Running on host computer</h1>
+
+<p>set -e</p>
+
+<p>echo “Pushing to the robot at ${ROBOT_IP:=192.168.2.2}…”
+git push ${USER:=pi}@$ROBOT_IP:REPO_NAME-bare</p>
+
+<p>echo “Pulling from bareclone on the robot…”
+ssh $USER@$ROBOT_IP ‘cd ~/REPO_NAME; git pull bareclone master’
+```</p>
+
+<p>Pull script, on the contrary, pull changes from the bare clone folder.</p>
+
+<p>```bash
+#!/bin/bash
+# Running on host computer</p>
+
+<p>set -e</p>
+
+<p>echo “On ${ROBOT_IP:=192.168.2.2}, pushing to bareclone…”
+ssh ${USER:=pi}@$ROBOT_IP ‘cd ~/REPO_NAME; git push bareclone master’</p>
+
+<p>echo “Pulling from the pi…”
+git pull $$USER@$ROBOT_IP:REPO_NAME-bare master</p>
+
+<p>```
+Those three scripts altogether are what you need to use Git offline. I often run the first script in my bash to set up the repository and save the second one as <code>push2robot.sh</code> to reuse it. Similarly, the third script is useful when there are more yourself committing code to the robot and I call it <code>pullfromrobot.sh</code>.</p>
+
+<p>From now on, you should able to stick with your normal git workflow and push/pull to your robot without internet access.
+The next section describes how to automate the push/pull in the code editor.</p>
+
+<h2 id="vs-code-custom-buttom">VS Code custom buttom</h2>
+
+<p>Most time I use the code editor to commit/push code to my repository by a few simple clicks. I would also like to do this without leaving my text editor.
+In VS code, it is pretty simple to custom the action using the action buttons plugin. 
+The plugin is available at <a href="https://github.com/SeunLanLege/vscode-action-buttons">here</a> in VScode extensions store.
+After installing the plugin, the action button is ready for our custom script.
+Add the following to your settings under <code>.vscode/ setting.json</code></p>
+
+<p>```json
+“actionButtons”: {
+        “defaultColor”: “#FFFFFF”, // Can also use string color names.
+        “loadNpmCommands”:false, // Disables automatic generation of actions for npm commands.
+        “reloadButton”:”♻️”, // Custom reload button text or icon (default ↻). null value enables automatic reload on configuration change
+        “commands”: [
+            {
+                “cwd”: “/home/nelson/ORCA_control/utilities”,     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                “name”: “Send to 🤖”,
+                “singleInstance”: true,
+                “command”: “./push2robot.bash”, // This is executed in the terminal.
+            }
+            {
+                “cwd”: “/home/nelson/ORCA_control/utilities”,     // Terminal initial folder ${workspaceFolder} and os user home as defaults
+                “name”: “Pull from 🤖”,
+                “singleInstance”: true,
+                “command”: “./pullfromrobot.bash”, // This is executed in the terminal.
+            }</p>
+
+<pre><code>    ]
+} ``` and hit the refresh button the `Send to 🤖` command will appear at the status bar.  After committing your changes, you can click this button and the code will be automatically uploaded to the robot. It is a good idea to `Pull from 🤖` first if you working as a team. Git will try to merge the changes made by your teammates and keep you updated while offline. Sweet.
+</code></pre>
+
+<figure class="fullwidth"><img src="/assets/img/offline-git/action-button.png" /><figcaption>Send to robot button in action</figcaption></figure>
+
+<h2 id="best-practise">Best practise</h2>
+
+<p>The pull and push mechanism is very simple. But there are some common gotchas that not as intuitive as <code>rsync</code> or <code>scp</code> based method.
+First of all, you always have to pull before push to your robot if your teammates are working on this repository together.
+Unless you know what you are doing do not force push your changes to the robot.
+Even it is an offline git, the principles of git workflow still apply.</p>
+
+<p>This workflow also discourages the direct changes in your robot working directory e.g. <code>SSH</code> into the robot and <code>vi</code> on the source code.
+You may able to commit them on the robot by using a separated robot account but it is harder to know who made those changes.
+It is also harder to deal with merge on the robot when the file is modified at the same time.</p>
+
+<p>So the best practise of working with offline Git is to treat it exactly as online Git. Enjoy the full power of Git without thinking about the internet connection in the field.</p>
+
+<p>Enjoy hacking with offline Git.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Offline Git for robots - April 11, 2020 - Yu Cao</span>
+    <footer>
+  <hr class="slender">
+  <!-- <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/twitter_handle"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/+googlePlusName"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/GithubHandle"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/photos/FlickrUserID"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul> -->
+<div class="credits">
+<span>&copy; 2016 - 2024 &nbsp;&nbsp;YU CAO</span></br> <br>
+<span>This site is built by <a href="//jekyllrb.com">Jekyll</a> with an adapted <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

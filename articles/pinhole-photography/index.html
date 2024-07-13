@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Pinhole photography</title>
+  <meta name="description" content="First assignmentThe first time I knew pinhole photography was back in junior high school. It was an assignment from the Physics class, we were asked to build...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/pinhole-photography">
+
+  <link rel="alternate" type="application/rss+xml" title="博 Bo" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/bo.gif" alt="博"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/index.html">blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/index.html">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Pinhole photography</h1>
+<p class="subtitle">August 1, 2018</p>
+
+<h2 id="first-assignment">First assignment</h2>
+<p>The first time I knew pinhole photography was back in junior high school. 
+It was an assignment from the Physics class, we were asked to build a camera using the pinhole effect.
+The design was simple Pringles cam with a tiny hole on the metal end.
+The other side was covered by a piece of semi-transparent paper. 
+As light went through the pinhole and projected on the paper, producing an up-side-down image.
+The blurry image of I first saw have being in my head since then.</p>
+
+<h2 id="years-after">10 years after</h2>
+<p>The way we take photos changed so rapidly during the last ten years. The Kodak Express film development shop, feels like in a night, all disappeared from the high street.
+The compact digital camera rise and fall. Smartphones now taking the first place as the most popular <label for="one" class="margin-toggle sidenote-number"></label><input type="checkbox" id="one" class="margin-toggle" /><span class="sidenote">Observation based on <a href="https://www.flickr.com/cameras/">Most Popular Cameras</a> in flickr user community </span> photography devices. Even before I saved enough money for a entry level DSLR, the mirrorless camera already change the way we understand professional photography.</p>
+
+<p>It would be interesting to take photos using the pinhole plus latest technology so I could digitalise those images as much as possible.<br />
+And here is how it looks like:</p>
+
+<figure><figcaption>Seagulls and People, 1960s (pretended)    F &gt; 100, ISO 3200, 1/25 s. </figcaption><img src="/assets/img/pinhole_photos/Seagull.jpg" /></figure>
+
+<p><em>Here is it!</em> Seagulls and People, a pretend-to-be 1960s photo taken a mirrorless camera. The camera use the exact same pinhole principle as my Pringles cam. 
+The only difference is the now has a digital back so I could share the image with you.
+Judging by the standard of modern photography, it was horrible.
+The sharpness definitely wasn’t on a par with images produced by modern lens. 
+However, the blurry and unsaturated flavour makes it creamy and even dreamy. 
+I guess that is the reason why it is accepted as an alternative photography.</p>
+
+<h2 id="engineering-a-pinhole">Engineering a pinhole</h2>
+<p><label for="mf-id-1" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/pinhole_photos/first_pinhole.JPG" /><br />Needle on the body cap for pinhole</span></p>
+
+<p>You could drill a hole on the body cap to get your first pinhole lens.
+Strictly speaking, pinhole lens is not a common optical lens focuses (or disperses) a light beam by means of refraction. 
+A small hole from few micrometers to a hundred micrometers can act as a lens. 
+The diameter of the pinhole is important to the quality of image.</p>
+
+<p>Chris gives an empirical formula to the pinhole size depending on the focal length and type of color.</p>
+
+<div class="mathblock"><script type="math/tex; mode=display">{d = \sqrt{f/C}}.</script></div>
+
+<p>In this equation, <span>​<script type="math/tex">d</script></span> is the diameter of pinhole, <span>​<script type="math/tex">f</script></span> is focal length in millimeters and <span>​<script type="math/tex">C</script></span>  is a constant depends on the color. Because the lens doesn’t converge the light ray, as Atelier mentioned, <label for="two" class="margin-toggle sidenote-number"></label><input type="checkbox" id="two" class="margin-toggle" /><span class="sidenote">His <a href="http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_outline/">lensless photography</a> is also an amazing source on pinhole photography.  </span> the focal length is the distance between the pinhole to image screen.</p>
+
+<p><label for="table-1-id" class="margin-toggle"> ⊕</label><input type="checkbox" id="table-1-id" class="margin-toggle" /><span class="marginnote"><em>Table</em>: Color constant given by Chris: <a href="http://web.archive.org/web/20170320200327/http://pinhole.stanford.edu/pinholemath.htm">web archive</a>. Assume a 35 mm film or full frame digital equivalent </span></p>
+
+<div class="table-wrapper">
+<table class="booktabs">
+          <thead>
+            <tr><th>Colors</th><th>Wave length</th><th>Color constant C</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Daylight</td>     <td>560 nm</td><td class="r">750</td></tr>
+            <tr><td>Blue</td>         <td>450 nm</td>    <td class="r">934</td></tr>
+            <tr><td>Green</td>      <td>550 nm</td> <td class="r">763</td></tr>
+            <tr><td>Red</td>      <td>650 nm</td> <td class="r">647</td></tr>
+            <tr><td>Infrared</td><td>750 nm</td>  <td class="r">561</td></tr>
+          </tbody>
+</table>
+</div>
+
+<p>Those information is enough for the engineering of pinhole. 
+For example, if we’d like to design a pinhole lens at 50mm focal length and minimise the diffraction for day light. 
+The diameter of the pinhole lens is</p>
+
+<div class="mathblock"><script type="math/tex; mode=display">{d = \sqrt{50 mm/750} = 0.258 mm}.</script></div>
+
+<p>It is not necessary to use home tools to engineer a hole at such precision.
+Since the visible light covers the spectrum from 400 to 700 nm, the diameter between 0.23 - 0.29 mm is acceptable.
+Some very geeky ruler shows you how a 0.25 mm hole should looks like.
+<label for="mf-id-1" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/pinhole_photos/with_ruler.jpeg" /><br />Original body cup with Nvidia ruler</span>
+But even you had a ruler like this, you’d better start from a smaller hole.
+Gently knock on the needle eye until it about to penetrate on the other side.
+Flip the body cup and repeatedly knock on the needle eye until you made the first hole.
+To extend the hole, use a larger needle on both side and knock them gently.
+Put the body cup back to the camera every time before you decide to use a larger needle.
+The first few images may looks like this:</p>
+
+<figure><figcaption>Building   F &gt; 100, ISO 6400, 1/25 s. </figcaption><img src="/assets/img/pinhole_photos/first_pinhole_result.jpg" /></figure>
+
+<p>It is great that the pinhole is well centred in the body cap so the image in the middle of frame.
+However, only the centre of the image is visible and the rest part is black.
+This is because the body cup is not an ideally thin film that the thickness does influence the view angle.</p>
+
+<figure><figcaption>Section view of the body cap, due to its thickness part of light is blocked.</figcaption><img src="/assets/img/pinhole_photos/eng_1.svg" /></figure>
+
+<p>We could make a step cut on both side of the body cup.
+This will help the increase the view angle and cover the whole area of the film (or CMOS sensor). 
+The final pinhole len is somehow looks like this</p>
+
+<figure><figcaption>Inside and outside of the final result. You can see the chamfer for a thiner pinhole. </figcaption><img src="/assets/img/pinhole_photos/final_product.jpg" /></figure>
+
+<h2 id="taking-a-picture">Taking a picture</h2>
+
+<p>At the time when you taking your first picture, someone may kindly remind you to take out body cup before shot.
+Here are some tips or facts that might useful to create your own pinhole photos.
+When using pinhole lens under day lights, the camera (Sony A7II) suggested a 1/25s shutter speed with ISO 6400. 
+This is still acceptable for hand hold shotting but prepare a tripod if you prefer a lower ISO or longer shutter speed.</p>
+
+<p>Any dirt on your sensor is highly visible in the image due to the low light. 
+Use the blower to clean the sensor if you mind those shown in red boxes.</p>
+
+<figure><figcaption>Seagull   F &gt; 100, ISO 6400, 1/25 s. Wiping your screen now? This was just dust on the sensor.</figcaption><img src="/assets/img/pinhole_photos/Seagull1.jpg" /></figure>
+
+<p>Another tip is to use your hand to shield sun light if the diffraction distract the main object in the view. 
+<label for="mf-id-3" class="margin-toggle">⊕</label><input type="checkbox" id="mf-id-3" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/pinhole_photos/diffraction.gif" /><br />Diffraction due to the sun</span></p>
+
+<p>Handheld street photography with pinhole is also super fun – epsecially the low constrast add a bit vintage flavour to your image.
+I do enjoy take some pinhole photos at busy street where everything looks old fashioned.</p>
+
+<h2 id="streaming-pinhole">Streaming pinhole</h2>
+
+<p>Although not recommended for serious work, you can stream pinhole video from most DSLR or mirrorless camera.
+For Sony cameras on Windows and macOS, please check Image Edge Webcam software provided by the vendor. 
+On Linux systems, gphoto2 and v4l2loopback together could help you to easily create a virutal video devices on most cameras.
+You can stream yourself by selecting the external camera with pinhole lens and enjoy the blurness.</p>
+
+<h2 id="history-of-pinhole">History of pinhole</h2>
+
+<p>There is an argument between who first discovered the pinhole effect.
+Aristotle in the west and Mo Di (墨子) in the east are commonly known as the first to mention the pinhole effect in their hemisphere.
+Atelier Bonryu presented a comprehensive <a href="http://atelier.bonryu.com/en/welcome/lensless/phphoto-l/ph_history/">review</a> on the history of the pinhole effect and pinhole photography. 
+I would recommend you to give it a read if you are interested in the origin of the pinhole photography.</p>
+
+
+
+
+    </article>
+    <span class="print-footer">Pinhole photography - August 1, 2018 - Yu Cao</span>
+    <footer>
+  <hr class="slender">
+  <!-- <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/twitter_handle"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/+googlePlusName"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/GithubHandle"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/photos/FlickrUserID"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul> -->
+<div class="credits">
+<span>&copy; 2016 - 2024 &nbsp;&nbsp;YU CAO</span></br> <br>
+<span>This site is built by <a href="//jekyllrb.com">Jekyll</a> with an adapted <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

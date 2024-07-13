@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lessons learnt from WRSC 2019</title>
+  <meta name="description" content="World Robotics Sailing Championship (WRSC) 2019 is the 12th edition in its history and it is my fourth attendance to this event. Previously, I was competing ...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/WRSC-lessons">
+
+  <link rel="alternate" type="application/rss+xml" title="博 Bo" href="/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="/"><img class="badge" src="/assets/img/bo.gif" alt="博"></a>
+	
+		
+  	
+		
+		    
+		      <a href="/index.html">blog</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/about/index.html">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+	</nav>
+</header>
+    <article class="group">
+      <h1>Lessons learnt from WRSC 2019</h1>
+<p class="subtitle">September 3, 2019</p>
+
+<p>World Robotics Sailing Championship (WRSC) 2019 is the 12th edition in its history and it is my fourth attendance to this event. Previously, I was competing from 2016 to 2018 with Team Southampton, a student team devoted to developing an open-source sailing robot. The team goes really well during the last couple of years and we decided to host the competition at Southampton in 2018. The experience gained from both technical and orgnisational aspects motivated me to bring this competition to China. With the help of partners at Zhejiang University and support from the city of Ningbo, we managed to host the biggest event in WRSC history. Whilst celebrating the achievement with 24 teams <label for="sn1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn1" class="margin-toggle" /><span class="sidenote">22 out of 24 attempted at least once in this year competition, for the full result see: https://github.com/WRSC/coordinates2019 </span> who managed to take part in the competition, there are some valuable lessons I learned from WRSC 2019.</p>
+
+<p>Let’s start from the positive side of the story. This year’s event attracts more than 20 teams to compete and many of them are first time player. The total effort behind this number is enormous and largely attributed to Prof. Chao Xu’s commitment to this event. He changed his IM account to <a href="http://roboticssailing.org">roboticsailing.org</a> and worked as custom service 24/7 to encourage teams to participate in this year’s competition. On the technical side, the Team Southampton open-source code and the standard ready-to-sail kit has lower the entry barrier for many teams. I have been invited to give a talk on the basic concepts in sailing and the use of Southampton code in last Christmas. This talk catalyst local teams to start using open source sailing robot code. Teams can focus on the development of their racing strategy instead of painstakingly converting RC boats into an autonomous one.<br />
+Another reason for the teams to quickly try robotics sailing is that the standard ready-to-sail kit have been developed for this year’s competition.</p>
+
+<figure><figcaption>Ready-to-sail kit boat, basic dimensions: 1.4 metres long, main and jib controlled by a single servo</figcaption><img src="/assets/img/wrsc2019/RTS_kit.jpg" /></figure>
+
+<p>Differential GPS trackers have been used in our tracking system, increase the localisation accuracy from ~10 m to 1~5 cm level. This technology relies on the land-based GPS offset correction network service — Qian Xun. <label for="sn2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn2" class="margin-toggle" /><span class="sidenote">https://www.qxwz.com/en/solution </span> With a good GPS and 4G network, those trackers are able to transmit high precision location data to the server and save the GPS coordinates locally. It is possible to record the position of the boat and buoy at higher accuracy during the challenges. However, those trackers are not that reliable with the its initial firmware. On board memory is limited so 
+our tracking system team had to limit the single-use time to one hour as a compromise to data log reliability.
+Lizi Wang and his tracking team have spent a lot of time to ask teams to submit their own tracking data when official data is missing. The land-based correction service is only available at China and several Asian countries.  There is a huge room to improve the DGPS tracker for next year’s competition.</p>
+
+<figure><figcaption>Color convention in WRSC 2019 competition</figcaption><img src="/assets/img/wrsc2019/colour.jpg" /></figure>
+
+<p>Lizi and I followed a color convention for this year’s WRSC race committee, this helps a lot to offload common tasks from both of us, allowing at least one of us to freely monitor the progress of the competition. There are four main colors to show the role of volunteers, red is chief referee, yellow is pontoon officer, and green is tracker officers. The rule is as simple as traffic lights. When there is anything emergent that stops you from competing, the team shall speak to one of two chief referees who wear red. Otherwise, the team shall register their attempt in each challenge to tracker officers in green. They will wait to the called by the pontoon officer and allowed to start their race. The yellow and green team use walky-talky to inform each other there is a team coming for the attempt and online spreadsheet was used to log the start and stop time of each attempt. I would recommend whoever is interested in host next year’s competition to use this color convention, otherwise, you will find yourself dealing with every single task because you are the only one that competing team is familiar with.</p>
+
+<p>The permissive culture of the WRSC is still well maintained. Teams are allowed to make multiple attempts and use the best as their result. We saw teams sharing hardware, exchanging ideas and even soldering electronics for each other. Knowledge sharing on software is not as common as hardware, partly due to the key competitive advantage is the race strategy coded there. Open-source software is widely used but the contribution from the teams is very limited. Language barrier and culture difference might be a reason why teams do not keen to share their improvements.</p>
+
+<p>Logistic is always a headache to WRSC and the long haul flight to China pose a huge challenge to European teams. Two out of three U.K. teams lost their boat during the transit and the boat arrived a day after the competition start. The risk of boat transportation during international travel limit the WRSC in many ways. First of all, teams tend to carrier smaller boat that can be taken on the airplane. Boats are getting smaller and smaller in recent years and the sailboat class disappeared in this year’s competition. Secondly,  part of the competition is about reliable logistics for international teams. The competition actually starts from the time when the boat is dropped at the airport. It is reasonable to suggest the team to arrive at least a day before the competition if there travel has a transit in between.</p>
+
+<p>Competition workshop and hotel of this year’s WRSC are at the top of the bar. However, the competition area is too small and not windy enough. The lake itself is located in the city so the wind is shielded by the nearby trees and buildings. It would be much better if the competition is hosted in  a larger open area.</p>
+
+<p>According to our post-competition survey, the performance of the online tracking website is under the expectation. When 20 trackers all trying to talk to the server, the tracking webpage becomes not responsive. What makes it worse is the law in China restricts the map provider using WGS-84 datum. Most maps in China are GCJ-02 datum, it has an offset to the WGS-84 coordinates which is usually reported by the GPS trackers. It is quite frustrating to see the boat sailing on the land. During the competition, we use Google Earth to pick up the waypoints for each challenge and Open Street Map (OSM) to display the boat trace. Google Earth project the satellite image using WGS-84 datum but Google Maps does not. OSM seems to neglected Chinese law and display the map in WGS-84.</p>
+
+<p><label for="mg-fig-1" class="margin-toggle">⊕</label><input type="checkbox" id="mg-fig-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/wrsc2019/wgs_offset.png" /><br />Map offset on Google map, boat should be in the water</span></p>
+
+<p>There are some discussions in replacing the paid Google maps by the OSM. Now there is one more vote for OSM due to the correct display of WGS-84 coordinates at China. The tracking system issue also reflects the lack of technical improvements during the year. There is no centralised organisation to steer the technical development of the WRSC. How could we maintain a group of professionals to improve the key systems (tracking, scoring and queuing) in a sustainable way?</p>
+
+
+
+    </article>
+    <span class="print-footer">Lessons learnt from WRSC 2019 - September 3, 2019 - Yu Cao</span>
+    <footer>
+  <hr class="slender">
+  <!-- <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/twitter_handle"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//plus.google.com/+googlePlusName"><span class="icon-googleplus"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/GithubHandle"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="//www.flickr.com/photos/FlickrUserID"><span class="icon-flickr"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul> -->
+<div class="credits">
+<span>&copy; 2016 - 2024 &nbsp;&nbsp;YU CAO</span></br> <br>
+<span>This site is built by <a href="//jekyllrb.com">Jekyll</a> with an adapted <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>
