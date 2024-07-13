@@ -41,7 +41,7 @@ jobs:
         git commit -m "Deploy site"
         git push --force --set-upstream origin gh-pages
     - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v3
 
   deploy:
     # Add a dependency to the build job
